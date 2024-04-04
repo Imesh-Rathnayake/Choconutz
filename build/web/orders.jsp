@@ -79,7 +79,7 @@
 
   </div>
 
-    <input type="reset" value="" />
+    
 
 
 
