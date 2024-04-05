@@ -45,7 +45,7 @@ public class Manage_Orders extends HttpServlet {
         
         Connection con;
         
-        
+        //Declare variables for connection
         
         String url="jdbc:mysql://localhost:3306/Derana_Agri";
         String dname="root";
@@ -55,10 +55,12 @@ public class Manage_Orders extends HttpServlet {
         PrintWriter out=response.getWriter();
         
         
-
+        
         
         try
         {
+            //create srevlet's body 
+            
             out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"en\">\n");
       out.write("\n");
@@ -147,12 +149,16 @@ public class Manage_Orders extends HttpServlet {
       out.write("\n");
       out.write("  <!-- body code goes here -->\n");
             
+      
+            //create connection 
             
             Class.forName("com.mysql.cj.jdbc.Driver");
             con=DriverManager.getConnection(url,dname,dpass);
             PreparedStatement pst=con.prepareStatement(query);
             java.sql.ResultSet result=pst.executeQuery();
             
+            
+            //print table with values
             
             out.println("<table align=\"center\" border=\"1\">");
             out.println("<tr><th><center>Category</center></th><th><center>Quantity</center></th><th><center>Name</center></th><th><center>Address</center></th><th><center>Mobile</center></th><th>Action</th></tr>");
@@ -172,6 +178,8 @@ public class Manage_Orders extends HttpServlet {
             out.println("</table>");
             
             
+      
+      //create srevlet's body
             
       out.write("\n");
       out.write("\n");

@@ -15,6 +15,7 @@ public class CardDb {
     public String title,price,description,imageName;
     
     
+    //constructor - get values
     
     public CardDb(int no,String title,String price,String description,String imageName)
     {
@@ -27,6 +28,9 @@ public class CardDb {
     
     public void updateDatabase() throws ClassNotFoundException
     {
+        
+        //declare variables
+        
         Connection con;
         
         String url="jdbc:mysql://localhost:3306/Donut";
@@ -39,10 +43,13 @@ public class CardDb {
         
         try
         {
+            //create connection
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
             con=DriverManager.getConnection(url,dname,dpass);
             PreparedStatement pst=con.prepareStatement(query);
             
+            //set values for prepared statement
             
             pst.setString(1, title);
             pst.setString(2, price);

@@ -53,6 +53,8 @@ public class Complete_Order extends HttpServlet {
         
         java.sql.Connection con;
         
+        //declare variables
+        
         String url="jdbc:mysql://localhost:3306/Derana_Agri";
         String dname="root";
         String dpass="";
@@ -62,6 +64,8 @@ public class Complete_Order extends HttpServlet {
         
         try
         {
+            //create connection & execute query
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
             con=DriverManager.getConnection(url,dname,dpass);
             PreparedStatement pst=con.prepareStatement(query);
