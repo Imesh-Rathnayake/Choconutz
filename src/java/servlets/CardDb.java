@@ -1,13 +1,9 @@
-
 package servlets;
-
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
-
 
 public class CardDb {
     
@@ -37,8 +33,6 @@ public class CardDb {
         String dname="root";
         String dpass="";
         String query="UPDATE Products SET Title=?,Price=?,Image=?,Description=? WHERE PID=?";
-        
-        
         
         
         try

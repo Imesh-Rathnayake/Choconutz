@@ -45,7 +45,10 @@
       <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarSupportedContent3">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a id="hm" class="nav-link" href="orders.jsp">Orders<span class="sr-only">(current)</span></a>
+              <form action="Manage_Orders">
+                  <input type="submit" value="Orders" id="hm" class="nav-link"/>
+              </form>
+              
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="index.html" style="color: blue;"><b>Products</b><span class="sr-only">(current)</span></a>
@@ -130,14 +133,14 @@
 
 
 
-  <!-- body code goes here -->
+  
 
 
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  
   <script src="js/jquery-3.4.1.min.js"></script>
 
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap-4.4.1.js"></script>
 </body>
