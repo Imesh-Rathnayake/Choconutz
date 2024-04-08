@@ -30,6 +30,13 @@
     .align-end {
       text-align: right;
     }
+    
+    .navbar-nav .nav-item.active #prd {
+    height: 60px;
+}
+    
+
+    
   </style>
 </head>
 
@@ -52,7 +59,7 @@
         </form>
       </li>
       <li class="nav-item active">
-        <input type="button" value="Products" id="prd" class="nvbtn">
+          <input type="button" value="Products" id="prd" class="nvbtn" onclick="window.location.href='index.jsp'">
       </li>
       <li class="nav-item active">
         <input type="button" value="Customers" class="nvbtn">
