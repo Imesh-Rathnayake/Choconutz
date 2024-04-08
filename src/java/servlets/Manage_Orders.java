@@ -99,6 +99,27 @@ public class Manage_Orders extends HttpServlet {
       out.write("\n");
       out.write("}\n");
       out.write("  </style>\n");
+      
+      out.write("  <script>\n");
+      out.write("      \n");
+      out.write("      function clicked()\n");
+      out.write("      {\n");
+      out.write("          var form = document.getElementById('products');\n");
+      out.write("          var confirmation = window.confirm(\"Do you need to complete this order?\");\n");
+      out.write("          \n");
+      out.write("          if(confirmation)\n");
+      out.write("          {\n");
+      out.write("              form.submit();\n");
+      out.write("          }\n");
+      out.write("          else\n");
+      out.write("          {\n");
+      out.write("              event.preventDefault();\n");
+      out.write("          }\n");
+      out.write("      }\n");
+      out.write("      \n");
+      out.write("      \n");
+      out.write("  </script>\n");
+      
       out.write("</head>\n");
       out.write("\n");
       out.write("<body style=\"background-color:#e1f1fd\">\n");
@@ -170,7 +191,7 @@ public class Manage_Orders extends HttpServlet {
                 out.println("<td>" + result.getString("Name") + "</td>");
                 out.println("<td>" + result.getString("Address") + "</td>");
                 out.println("<td>" + result.getString("Mobile") + "</td>");
-                out.println("<td><form method='Post' action='Complete_Order'><input type='hidden' name='record_id' value='" + result.getString("ID") + "'><input type='submit' value='Complete' class='btn btn-primary'></form></td>");
+                out.println("<td><form method='Post' action='Complete_Order'><input type='hidden' name='record_id' value='" + result.getString("ID") + "'><input type='button' value='Complete' onclick=\"clicked()\" class=\"btn btn-danger\"></form></td>");
                 out.println("</tr>");
             }
 

@@ -38,6 +38,27 @@
 
     
   </style>
+  
+  
+  <script>
+      
+      function clicked()
+      {
+          var form = document.getElementById('products');
+          var confirmation = window.confirm("Do you want to update product?");
+          
+          if(confirmation)
+          {
+              form.submit();
+          }
+          else
+          {
+              event.preventDefault();
+          }
+      }
+      
+      
+  </script>
 </head>
 
 <body style="background-color:#e1f1fd">
@@ -77,7 +98,7 @@
 
 
     
-    <form  action="updateCard" method="POST" enctype="multipart/form-data">
+    <form  action="updateCard" method="POST" enctype="multipart/form-data" id="products">
       <center>
         <table>
           <tr>
@@ -118,7 +139,7 @@
 
             <td colspan="2">
             <button type="reset" class="btn btn-warning">Clear</button>
-            <button type="submit" class="btn btn-success" >Update</button>   </td>
+            <button class="btn btn-success" onclick="clicked()" >Update</button>   </td>
           </tr>
 
         </table>
