@@ -74,7 +74,7 @@ public class updateCard extends HttpServlet {
         Part imagePart=request.getPart("file1");
         String imageName=imagePart.getSubmittedFileName();
        
-        FileOutputStream outputStream = new FileOutputStream(new File("/Users/vinodrahal/NetBeansProjects/webApp1/web/images/cardImage/" + imageName));
+        FileOutputStream outputStream = new FileOutputStream(new File("/Users/vinodrahal/NetBeansProjects/webApp1/Choconutz/web/images/cardImage/" + imageName));
         
         out.println(crdNo+"\n"+title+"\n"+price+"\n"+discription+"\n"+imageName);   //for testing parameters
         
