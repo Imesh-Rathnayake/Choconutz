@@ -83,7 +83,9 @@
           <input type="button" value="Products" id="prd" class="nvbtn" onclick="window.location.href='index.jsp'">
       </li>
       <li class="nav-item active">
-        <input type="button" value="Customers" class="nvbtn">
+        <form action="feedback">
+          <input type="submit" value="Orders" id="feed" class="nvbtn" />
+        </form>
       </li>
       <li class="nav-item active">
         <input type="button" value="Other" class="nvbtn">

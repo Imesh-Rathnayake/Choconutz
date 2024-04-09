@@ -55,7 +55,7 @@ public class Complete_Order extends HttpServlet {
         
         //declare variables
         
-        String url="jdbc:mysql://localhost:3306/Derana_Agri";
+        String url="jdbc:mysql://localhost:3306/Donut";
         String dname="root";
         String dpass="";
         String query="DELETE FROM MyOrders WHERE ID = ?";
@@ -74,6 +74,7 @@ public class Complete_Order extends HttpServlet {
             
             String redirectURL = request.getContextPath() + "/Manage_Orders";
             response.sendRedirect(redirectURL);
+            con.close();
         }
         catch(ClassNotFoundException | SQLException e)
         {

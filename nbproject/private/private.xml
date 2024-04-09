@@ -5,9 +5,13 @@
         <group>
             <file>file:/Users/vinodrahal/NetBeansProjects/webApp1/Choconutz/src/java/servlets/updateCard.java</file>
             <file>file:/Users/vinodrahal/NetBeansProjects/webApp1/Choconutz/src/java/servlets/Complete_Order.java</file>
-            <file>file:/Users/vinodrahal/NetBeansProjects/webApp1/Choconutz/src/java/servlets/CardDb.java</file>
+            <file>file:/Users/vinodrahal/NetBeansProjects/webApp1/Choconutz/web/index1.jsp</file>
+            <file>file:/Users/vinodrahal/NetBeansProjects/webApp1/Choconutz/web/index.jsp</file>
+            <file>file:/Users/vinodrahal/NetBeansProjects/webApp1/Choconutz/src/java/servlets/feedback.java</file>
             <file>file:/Users/vinodrahal/NetBeansProjects/webApp1/Choconutz/src/java/servlets/ResultSet.java</file>
             <file>file:/Users/vinodrahal/NetBeansProjects/webApp1/Choconutz/src/java/servlets/Manage_Orders.java</file>
+            <file>file:/Users/vinodrahal/NetBeansProjects/webApp1/Choconutz/web/orders.jsp</file>
+            <file>file:/Users/vinodrahal/NetBeansProjects/webApp1/Choconutz/web/admin.css</file>
         </group>
     </open-files>
 </project-private>

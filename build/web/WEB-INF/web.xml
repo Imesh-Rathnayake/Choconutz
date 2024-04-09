@@ -16,6 +16,10 @@
         <servlet-name>Complete_Order</servlet-name>
         <servlet-class>servlets.Complete_Order</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>feedback</servlet-name>
+        <servlet-class>servlets.feedback</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>log</servlet-name>
         <url-pattern>/log</url-pattern>
@@ -31,5 +35,9 @@
     <servlet-mapping>
         <servlet-name>Complete_Order</servlet-name>
         <url-pattern>/Complete_Order</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>feedback</servlet-name>
+        <url-pattern>/feedback</url-pattern>
     </servlet-mapping>
 </web-app>

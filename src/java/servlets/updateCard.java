@@ -101,6 +101,7 @@ public class updateCard extends HttpServlet {
         
         CardDb card=new CardDb(crdNo,title,price,discription,imageName);
         
+        
         try 
         {
             card.updateDatabase();
