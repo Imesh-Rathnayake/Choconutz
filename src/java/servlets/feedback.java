@@ -84,8 +84,10 @@ public class feedback extends HttpServlet {
       out.write("      text-align: right;\n");
       out.write("    }\n");
       out.write("    \n");
-      out.write("    .navbar-nav .nav-item.active #cst {\n");
-      out.write("    height: 60px;\n");
+      out.write("    .nav-item.active form #feed {\n");
+      out.write("        \n");
+      out.write("            height: 60px;\n");
+      out.write("\n");
       out.write("}\n");
       out.write("    \n");
       out.write("\n");
@@ -93,25 +95,7 @@ public class feedback extends HttpServlet {
       out.write("  </style>\n");
       out.write("  \n");
       out.write("  \n");
-      out.write("  <script>\n");
-      out.write("      \n");
-      out.write("      function clicked()\n");
-      out.write("      {\n");
-      out.write("          var form = document.getElementById('products');\n");
-      out.write("          var confirmation = window.confirm(\"Do you want to update product?\");\n");
-      out.write("          \n");
-      out.write("          if(confirmation)\n");
-      out.write("          {\n");
-      out.write("              form.submit();\n");
-      out.write("          }\n");
-      out.write("          else\n");
-      out.write("          {\n");
-      out.write("              event.preventDefault();\n");
-      out.write("          }\n");
-      out.write("      }\n");
-      out.write("      \n");
-      out.write("      \n");
-      out.write("  </script>\n");
+      
       out.write("</head>\n");
       out.write("\n");
       out.write("<body style=\"background-color:#e1f1fd\">\n");
@@ -139,7 +123,7 @@ public class feedback extends HttpServlet {
       
       
       out.write("        <form action=\"feedback\">\n");
-      out.write("          <input type=\"submit\" value=\"Orders\" id=\"feed\" class=\"nvbtn\" />\n");
+      out.write("          <input type=\"submit\" value=\"Feedbacks\" id=\"feed\" class=\"nvbtn\" />\n");
       out.write("        </form>\n");
       
       
@@ -159,7 +143,7 @@ public class feedback extends HttpServlet {
       out.write("       <form action=\"feedback\" method=\"GET\">\n");
       out.write("        \n");
       out.write("           <label><b>Select Date :</b></label><input type=\"date\" name=\"date\" value=\"\" />\n");
-      out.write("           <input type=\"submit\" value=\"Search\" />\n");
+      out.write("           <input type=\"submit\" class=\"btn btn-info\" value=\"Search\" />\n");
       out.write("    </form> \n");
       out.write("        \n");
       
@@ -192,7 +176,7 @@ public class feedback extends HttpServlet {
                 
                 
                 out.println("<table align=\"center\" border=\"1\">");
-                out.println("<tr><th><center>Email</center></th><th><center>Feedback</center></th><th>Action</th></tr>");
+                out.println("<tr><th><center>Email</center></th><th><center>Feedback</center></th><th><center>Action</center></th></tr>");
             
             while (result.next()) 
             {
@@ -201,7 +185,7 @@ public class feedback extends HttpServlet {
                 out.println("<td>" + result.getString("Email") + "</td>");
                 out.println("<td>" + result.getString("Feedback") + "</td>");
                 
-                out.println("<td><form method='Post' action='Complete_Order'><input type='hidden' name='Email' value='" + result.getString("Email") + "'><input type='button' value='Reply' onclick=\"clicked()\" class=\"btn btn-danger\"></form></td>");
+                out.println("<td><form method='GET' action='sendMail'><input type='hidden' name='Email' value='" + result.getString("Email") + "'>Subject: <input type='text' name='subject'><br><br>Body :<textarea name='body' rows='3' cols='20'></textarea><br><input type='submit' value='Reply'  class=\"btn btn-primary\"></form></td>");
                 out.println("</tr>");
             }
 
@@ -214,10 +198,10 @@ public class feedback extends HttpServlet {
                 PreparedStatement pst=con.prepareStatement(query2);
                 pst.setString(1,date);
                 java.sql.ResultSet result=pst.executeQuery();
-                out.println("Date : "+date);
+                out.println("<br><h6>Selected date : "+date+"</h6>");
                 
                 out.println("<table align=\"center\" border=\"1\">");
-                out.println("<tr><th><center>Email</center></th><th><center>Feedback</center></th><th>Action</th></tr>");
+                out.println("<tr><th><center>Email</center></th><th><center>Feedback</center></th><th><center>Action</center></th></tr>");
             
                  while (result.next()) 
                  {
@@ -226,7 +210,7 @@ public class feedback extends HttpServlet {
                     out.println("<td>" + result.getString("Email") + "</td>");
                     out.println("<td>" + result.getString("Feedback") + "</td>");
 
-                    out.println("<td><form method='Post' action='Complete_Order'><input type='hidden' name='Email' value='" + result.getString("Email") + "'><input type='button' value='Reply' onclick=\"clicked()\" class=\"btn btn-danger\"></form></td>");
+                    out.println("<td><form method='GET' action='sendMail'><input type='hidden' name='Email' value='" + result.getString("Email") + "'>Subject: <input type='text' name='subject'><br><br>Body :<textarea name='body' rows='3' cols='20'></textarea><br><input type='submit' value='Reply'  class=\"btn btn-primary\"></form></td>");
                     out.println("</tr>");
                  }
 

@@ -20,6 +20,16 @@
         <servlet-name>feedback</servlet-name>
         <servlet-class>servlets.feedback</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>sendMail</servlet-name>
+        <servlet-class>servlets.sendMail</servlet-class>
+        <!-- https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api -->
+        
+
+    </servlet>
+   
+    
+    
     <servlet-mapping>
         <servlet-name>log</servlet-name>
         <url-pattern>/log</url-pattern>
@@ -40,4 +50,15 @@
         <servlet-name>feedback</servlet-name>
         <url-pattern>/feedback</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sendMail</servlet-name>
+        <url-pattern>/sendMail</url-pattern>
+    </servlet-mapping>
+     <dependency>
+            <groupId>jakarta.activation</groupId>
+            <artifactId>jakarta.activation-api</artifactId>
+            <version>2.0.0</version>
+            
+    </dependency>
+
 </web-app>

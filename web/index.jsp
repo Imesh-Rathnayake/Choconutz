@@ -35,15 +35,15 @@
     height: 60px;
 }
     
-
-    
   </style>
   
   
-  <script>
+   <script>
       
       function clicked()
       {
+          
+          
           var form = document.getElementById('products');
           var confirmation = window.confirm("Do you want to update product?");
           
@@ -59,6 +59,11 @@
       
       
   </script>
+  
+  
+  
+  
+  
 </head>
 
 <body style="background-color:#e1f1fd">
@@ -84,7 +89,7 @@
       </li>
       <li class="nav-item active">
         <form action="feedback">
-          <input type="submit" value="Orders" id="feed" class="nvbtn" />
+          <input type="submit" value="Feedbacks" id="feed" class="nvbtn" />
         </form>
       </li>
       <li class="nav-item active">
@@ -96,10 +101,10 @@
     </ul>
   </div>
 </nav>
-
-
-
     
+    
+    
+  
     <form  action="updateCard" method="POST" enctype="multipart/form-data" id="products">
       <center>
         <table>
@@ -162,6 +167,7 @@
   
   <script src="js/jquery-3.4.1.min.js"></script>
 
+  
   
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap-4.4.1.js"></script>

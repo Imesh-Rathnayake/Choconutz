@@ -1,6 +1,0 @@
-
-package servlets;
-
-class ResultSet {
-    
-}

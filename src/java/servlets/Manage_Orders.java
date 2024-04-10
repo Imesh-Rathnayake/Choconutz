@@ -146,7 +146,7 @@ public class Manage_Orders extends HttpServlet {
       out.write("      <li class=\"nav-item active\">\n");
       
       out.write("        <form action=\"feedback\">\n");
-      out.write("          <input type=\"submit\" value=\"Orders\" id=\"feed\" class=\"nvbtn\" />\n");
+      out.write("          <input type=\"submit\" value=\"Feedbacks\" id=\"feed\" class=\"nvbtn\" />\n");
       out.write("        </form>\n");
       
       out.write("      </li>\n");
