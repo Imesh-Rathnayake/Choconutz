@@ -24,12 +24,15 @@
         <servlet-name>sendMail</servlet-name>
         <servlet-class>servlets.sendMail</servlet-class>
         <!-- https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api -->
-        
-
     </servlet>
-   
-    
-    
+    <servlet>
+        <servlet-name>provide_Category</servlet-name>
+        <servlet-class>servlets.provide_Category</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Add_Products</servlet-name>
+        <servlet-class>servlets.Add_Products</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>log</servlet-name>
         <url-pattern>/log</url-pattern>
@@ -54,11 +57,17 @@
         <servlet-name>sendMail</servlet-name>
         <url-pattern>/sendMail</url-pattern>
     </servlet-mapping>
-     <dependency>
-            <groupId>jakarta.activation</groupId>
-            <artifactId>jakarta.activation-api</artifactId>
-            <version>2.0.0</version>
-            
+    <dependency>
+        <groupId>jakarta.activation</groupId>
+        <artifactId>jakarta.activation-api</artifactId>
+        <version>2.0.0</version>
     </dependency>
-
+    <servlet-mapping>
+        <servlet-name>provide_Category</servlet-name>
+        <url-pattern>/provide_Category</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Add_Products</servlet-name>
+        <url-pattern>/Add_Products</url-pattern>
+    </servlet-mapping>
 </web-app>

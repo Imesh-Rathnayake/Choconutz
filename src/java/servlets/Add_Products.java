@@ -1,5 +1,5 @@
-package servlets;
 
+package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -7,18 +7,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.Connection;
 
-/**
- *
- * @author vinodrahal
- */
-public class Manage_Orders extends HttpServlet {
+
+public class Add_Products extends HttpServlet {
 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -29,39 +24,58 @@ public class Manage_Orders extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Manage_Orders</title>");            
+            out.println("<title>Servlet Add_Products</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Manage_Orders at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Add_Products at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     }
 
-   
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        Connection con;
-        
-        //Declare variables for connection
-        
-        String url="jdbc:mysql://localhost:3306/Donut";
-        String dname="root";
-        String dpass="";
-        String query="SELECT Category, Quantity, Name, Address, Mobile, ID FROM MyOrders";
-        
-        PrintWriter out=response.getWriter();
-        
-        
-        
-        
-        try
-        {
-            //create srevlet's body 
-            
-            out.write("<!DOCTYPE html>\n");
+       PrintWriter out =response.getWriter();
+       
+       String url="jdbc:mysql://localhost:3306/choconuts";
+       String dname="root";
+       String dpass="";
+       String query="SELECT id,name FROM Categories";
+       
+       Connection con;
+       
+       int count = 0;
+       
+       try
+       {
+           Class.forName("com.mysql.cj.jdbc.Driver");
+           con=DriverManager.getConnection(url,dname,dpass);
+           PreparedStatement pst=con.prepareStatement(query);
+           java.sql.ResultSet result=pst.executeQuery();
+           
+           count=0;
+           
+           while(result.next())
+           {
+              
+              String id="selectID"+count;
+              String value="selectVAL"+count;
+             
+              request.setAttribute(id,result.getInt("id"));
+              request.setAttribute(value,result.getString("name"));
+              
+              count++;
+           }
+       
+       }
+       catch(ClassNotFoundException | SQLException e)
+       {
+           out.println(e.getMessage());
+       }
+       
+      out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"en\">\n");
       out.write("\n");
       out.write("<head>\n");
@@ -93,19 +107,24 @@ public class Manage_Orders extends HttpServlet {
       out.write("    .align-end {\n");
       out.write("      text-align: right;\n");
       out.write("    }\n");
-      out.write("    .nav-item.active form #hm {\n");
-      out.write("        \n");
-      out.write("            height: 60px;\n");
-      out.write("\n");
+      out.write("    \n");
+      out.write("    .navbar-nav .nav-item.active #prd {\n");
+      out.write("    height: 60px;\n");
       out.write("}\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("    \n");
       out.write("  </style>\n");
-      
-      out.write("  <script>\n");
+      out.write("  \n");
+      out.write("  \n");
+      out.write("   <script>\n");
       out.write("      \n");
       out.write("      function clicked()\n");
       out.write("      {\n");
-      out.write("          var form = document.getElementById('delete_order');\n");
-      out.write("          var confirmation = window.confirm(\"Do you need to complete this order?\");\n");
+      out.write("          \n");
+      out.write("          \n");
+      out.write("          var form = document.getElementById('products');\n");
+      out.write("          var confirmation = window.confirm(\"Do you want to update product?\");\n");
       out.write("          \n");
       out.write("          if(confirmation)\n");
       out.write("          {\n");
@@ -119,7 +138,11 @@ public class Manage_Orders extends HttpServlet {
       out.write("      \n");
       out.write("      \n");
       out.write("  </script>\n");
-      
+      out.write("  \n");
+      out.write("  \n");
+      out.write("  \n");
+      out.write("  \n");
+      out.write("  \n");
       out.write("</head>\n");
       out.write("\n");
       out.write("<body style=\"background-color:#e1f1fd\">\n");
@@ -144,11 +167,9 @@ public class Manage_Orders extends HttpServlet {
       out.write("          <input type=\"button\" value=\"Products\" id=\"prd\" class=\"nvbtn\" onclick=\"window.location.href='index.jsp'\">\n");
       out.write("      </li>\n");
       out.write("      <li class=\"nav-item active\">\n");
-      
       out.write("        <form action=\"feedback\">\n");
       out.write("          <input type=\"submit\" value=\"Feedbacks\" id=\"feed\" class=\"nvbtn\" />\n");
       out.write("        </form>\n");
-      
       out.write("      </li>\n");
       out.write("      <li class=\"nav-item active\">\n");
       out.write("        <input type=\"button\" value=\"Other\" class=\"nvbtn\">\n");
@@ -159,85 +180,99 @@ public class Manage_Orders extends HttpServlet {
       out.write("    </ul>\n");
       out.write("  </div>\n");
       out.write("</nav>\n");
-      out.write("\n");
-      out.write("\n");
-      
       out.write("    \n");
+      out.write("    \n");
+      out.write("    \n");
+      out.write("  \n");
+      out.write("    <form  action=\"updateCard\" method=\"POST\" enctype=\"multipart/form-data\" id=\"products\">\n");
+      out.write("      <center>\n");
+      out.write("        <table>\n");
+      out.write("          <tr>\n");
+      out.write("            <th >Select Category :</th>\n");
+      out.write("            <td id=\"1\"><select id=\"crdNo\" name=\"crdNo\" >\n");
+      
+      
+              
+              for(int i=0;i<count;i++)
+              {
+                  
+                  String concatVAL="selectVAL"+i;
+                  String concatID="selectID"+i;
+                  
+                  String value= (String)request.getAttribute(concatVAL);
+                  int id = (int) request.getAttribute(concatID);
+                    
+              
+                    out.write("<option value="+id+">"+value+"</option>");
+                
+               }
+
+              
+      
+      out.write("              </select></td>\n");
+      out.write("          </tr>\n");
+      out.write("\n");
+      out.write("          <tr>\n");
+      out.write("            <th>Set card title :</th>\n");
+      out.write("            <td id=\"2\"><input type=\"text\" name=\"Title\" id=\"Title\" placeholder=\"new title\" ></td>\n");
+      out.write("          </tr>\n");
+      out.write("\n");
+      out.write("          <tr>\n");
+      out.write("            <th>Set Price :</th>\n");
+      out.write("            <td id=\"3\"><input type=\"text\" name=\"crdPrice\" id=\"crdPrice\" placeholder=\"new price\" ></td>\n");
+      out.write("          </tr>\n");
+      out.write("\n");
+      out.write("          <tr>\n");
+      out.write("            <th>Set Discription:</th>\n");
+      out.write("            <td id=\"4\"><textarea id=\"discript\" name=\"discript\" rows=\"4\" cols=\"50\" placeholder=\"new discription\"\n");
+      out.write("                ></textarea></td>\n");
+      out.write("          </tr>\n");
+      out.write("\n");
+      out.write("          <tr>\n");
+      out.write("            <th>Select Card Image:</th>\n");
+      out.write("            <td><input type=\"file\" name=\"file1\" ></td>\n");
+      out.write("          </tr>\n");
+      out.write("\n");
+      out.write("          <tr>\n");
+      out.write("\n");
+      out.write("            <td colspan=\"2\">\n");
+      out.write("            <button type=\"reset\" class=\"btn btn-warning\">Clear</button>\n");
+      out.write("            <button class=\"btn btn-success\" onclick=\"clicked()\" >Update</button>   </td>\n");
+      out.write("          </tr>\n");
+      out.write("\n");
+      out.write("        </table>\n");
+      out.write("\n");
+      out.write("      </center>\n");
+      out.write("    </form>\n");
       out.write("\n");
       out.write("  </div>\n");
       out.write("\n");
-      out.write("    \n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      
-      
-            //create connection 
-            
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection(url,dname,dpass);
-            PreparedStatement pst=con.prepareStatement(query);
-            java.sql.ResultSet result=pst.executeQuery();
-            
-            
-            //print table with values
-            
-            out.println("<table align=\"center\" border=\"1\">");
-            out.println("<tr><th><center>Category</center></th><th><center>Quantity</center></th><th><center>Name</center></th><th><center>Address</center></th><th><center>Mobile</center></th><th>Action</th></tr>");
-            
-            while (result.next()) {
-                
-                out.println("<tr>");
-                out.println("<td>" + result.getString("Category") + "</td>");
-                out.println("<td>" + result.getString("Quantity") + "</td>");
-                out.println("<td>" + result.getString("Name") + "</td>");
-                out.println("<td>" + result.getString("Address") + "</td>");
-                out.println("<td>" + result.getString("Mobile") + "</td>");
-                out.println("<td><form method='POST' id='delete_order' action='Complete_Order'><input type='hidden' name='record_id' value='" + result.getString("ID") + "'><input type='button' value='Complete' onclick=\"clicked()\" class=\"btn btn-danger\"></form></td>");
-                out.println("</tr>");
-            }
-
-            out.println("</table>");
-            
-            
-      
-      //create srevlet's body
-            
+      out.write("  \n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->\n");
+      out.write("  \n");
       out.write("  <script src=\"js/jquery-3.4.1.min.js\"></script>\n");
       out.write("\n");
-      out.write("  <!-- Include all compiled plugins (below), or include individual files as needed -->\n");
+      out.write("  \n");
+      out.write("  \n");
       out.write("  <script src=\"js/popper.min.js\"></script>\n");
       out.write("  <script src=\"js/bootstrap-4.4.1.js\"></script>\n");
       out.write("</body>\n");
       out.write("\n");
       out.write("</html>");
-            
-        con.close();  
-        
-        }
-        catch(SQLException e)
-        {
-            System.out.println(e.getMessage());
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Manage_Orders.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        finally
-        {
-            
-        }
-        
-         
     }
 
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
         processRequest(request, response);
     }
 
@@ -245,6 +280,6 @@ public class Manage_Orders extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }
+    }// </editor-fold>
 
 }

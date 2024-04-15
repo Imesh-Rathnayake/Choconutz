@@ -34,6 +34,8 @@
     .navbar-nav .nav-item.active #prd {
     height: 60px;
 }
+
+
     
   </style>
   
@@ -61,7 +63,7 @@
   </script>
   
   
-  
+ 
   
   
 </head>
@@ -102,22 +104,37 @@
   </div>
 </nav>
     
-    
+     <%
+      for(int i=0;i<3;i++)
+      {
+      out.println("hello\n");
+  }
+      
+      %>
     
   
     <form  action="updateCard" method="POST" enctype="multipart/form-data" id="products">
       <center>
         <table>
           <tr>
-            <th >Select Card No :</th>
+            <th >Select Category :</th>
             <td id="1"><select id="crdNo" name="crdNo" >
-                <option value="0">Select Card</option>
-                <option value="1">Card 01</option>
-                <option value="2">Card 02</option>
-                <option value="3">Card 03</option>
-                <option value="4">Card 04</option>
-                <option value="5">Card 05</option>
-                <option value="6">Card 06</option>
+                
+                
+               <%
+              
+              for(int i=0;i<3;i++)
+              {
+                    String id=(String) request.getAttribute("selectID"+i);
+                    
+                    
+              
+                    out.println("<option value="+i+">"+id+"</option>");
+                
+               }
+
+              %>            
+                
               </select></td>
           </tr>
 

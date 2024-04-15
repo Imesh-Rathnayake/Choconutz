@@ -95,9 +95,17 @@ public class sendMail extends HttpServlet {
 
             // Write response message
             PrintWriter out = response.getWriter();
-            out.println("<html><body>");
-            out.println("<h3>Email sent successfully!</h3>");
-            out.println("</body></html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Alert!</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Email sent completed.');");
+            out.println("window.location.href = 'index.jsp';"); 
+            out.println("</script>");
+            out.println("</body>");
+            out.println("</html>");
         } catch (MessagingException e) {
             // Set response content type
             response.setContentType("text/html");
