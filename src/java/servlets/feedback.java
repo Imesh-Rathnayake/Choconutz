@@ -117,7 +117,12 @@ public class feedback extends HttpServlet {
       out.write("        </form>\n");
       out.write("      </li>\n");
       out.write("      <li class=\"nav-item active\">\n");
-      out.write("          <input type=\"button\" value=\"Products\" id=\"prd\" class=\"nvbtn\" onclick=\"window.location.href='index.jsp'\">\n");
+      
+      out.write("        <form action=\"Add_Products\">\n");
+      out.write("          <input type=\"submit\" value=\"Products\" id=\"prd\" class=\"nvbtn\" />\n");
+      out.write("        </form>\n");
+      
+      
       out.write("      </li>\n");
       out.write("      <li class=\"nav-item active\">\n");
       
