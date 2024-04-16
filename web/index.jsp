@@ -104,13 +104,6 @@
   </div>
 </nav>
     
-     <%
-      for(int i=0;i<3;i++)
-      {
-      out.println("hello\n");
-  }
-      
-      %>
     
   
     <form  action="updateCard" method="POST" enctype="multipart/form-data" id="products">
@@ -158,10 +151,17 @@
             <th>Select Card Image:</th>
             <td><input type="file" name="file1" ></td>
           </tr>
+          
+          <tr>
+              <th>Is active?</th>
+              <td><input type="checkbox" name="fac" value="TRUE" />   <small>Active Product</small></td>
+          </tr>
+          
+          
 
           <tr>
-
-            <td colspan="2">
+              
+             <td colspan="2">
             <button type="reset" class="btn btn-warning">Clear</button>
             <button class="btn btn-success" onclick="clicked()" >Update</button>   </td>
           </tr>

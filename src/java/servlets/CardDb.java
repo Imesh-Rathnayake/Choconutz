@@ -7,19 +7,23 @@ import java.sql.SQLException;
 
 public class CardDb {
     
-    public int no;
-    public String title,price,description,imageName;
-    
+    public int id,category_ID;
+    public String name,description,imageName;
+    boolean active;
+    double price;
     
     //constructor - get values
     
-    public CardDb(int no,String title,String price,String description,String imageName)
+    public CardDb(int id,int category_ID,String name,double price,String description,String imageName,boolean active)
     {
-        this.no=no;
-        this.title=title;
+        this.id=id;
+        this.name=name;
         this.price=price;
         this.description=description;
-        this.imageName=imageName;                
+        this.imageName=imageName;
+        this.active=active;
+        this.category_ID=category_ID;
+        
     }
     
     public void updateDatabase() throws ClassNotFoundException
@@ -29,10 +33,10 @@ public class CardDb {
         
         Connection con;
         
-        String url="jdbc:mysql://localhost:3306/Donut";
+        String url="jdbc:mysql://localhost:3306/choconuts";
         String dname="root";
         String dpass="";
-        String query="UPDATE Products SET Title=?,Price=?,Image=?,Description=? WHERE PID=?";
+        String query="INSERT INTO Products (id,name,description,price,image_url,category_id,is_active) VALUES(?,?,?,?,?,?,?)";
         
         
         try
@@ -45,12 +49,13 @@ public class CardDb {
             
             //set values for prepared statement
             
-            pst.setString(1, title);
-            pst.setString(2, price);
-            pst.setString(3,imageName);
-            pst.setString(4,description);
-            pst.setInt(5, no);
-            
+            pst.setInt(1, id);
+            pst.setString(2, name);
+            pst.setString(3,description);
+            pst.setDouble(4, price);
+            pst.setString(5, imageName);
+            pst.setInt(6,category_ID);
+            pst.setBoolean(7, active);
             pst.execute();
             
             

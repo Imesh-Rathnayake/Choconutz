@@ -63,10 +63,28 @@ public class updateCard extends HttpServlet {
         
         //Get text input values
         
-        int crdNo=Integer.parseInt(request.getParameter("crdNo"));
-        String title=request.getParameter("Title");
-        String price=request.getParameter("crdPrice");
-        String discription=request.getParameter("discript");
+        int category_id=Integer.parseInt(request.getParameter("category_ID"));
+        int id=Integer.parseInt(request.getParameter("id"));
+        String name=request.getParameter("name");
+        double price=Double.parseDouble(request.getParameter("price"));
+        String discription=request.getParameter("discription");
+        String activeValue=request.getParameter("active");
+        
+        boolean active;
+        
+        if(activeValue.equals("TRUE"))
+        {
+            
+            active=true;
+        
+        }
+        else
+        {
+            active=false;
+        
+        }
+        
+        
         
         
         // To Get file_input's details and move it
@@ -76,7 +94,7 @@ public class updateCard extends HttpServlet {
        
         FileOutputStream outputStream = new FileOutputStream(new File("/Users/vinodrahal/NetBeansProjects/webApp1/Choconutz/web/images/cardImage/" + imageName));
         
-        out.println(crdNo+"\n"+title+"\n"+price+"\n"+discription+"\n"+imageName);   //for testing parameters
+        out.println(category_id+"\n"+name+"\n"+price+"\n"+discription+"\n"+imageName);   //for testing parameters
         
         
         // To write moved file
@@ -99,7 +117,7 @@ public class updateCard extends HttpServlet {
         
         // Call CardDb class to update card
         
-        CardDb card=new CardDb(crdNo,title,price,discription,imageName);
+        CardDb card=new CardDb(id,category_id,name,price,discription,imageName,active);
         
         
         try 
@@ -107,7 +125,7 @@ public class updateCard extends HttpServlet {
             card.updateDatabase();
             
             
-            response.sendRedirect("index.jsp");
+            response.sendRedirect(request.getContextPath()+ "/Add_Products");
             
         }
         catch (ClassNotFoundException ex)

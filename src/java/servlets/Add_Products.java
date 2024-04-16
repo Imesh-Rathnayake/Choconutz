@@ -55,11 +55,14 @@ public class Add_Products extends HttpServlet {
            PreparedStatement pst=con.prepareStatement(query);
            java.sql.ResultSet result=pst.executeQuery();
            
+           
+           //create attributes for categories
+           
            count=0;
            
            while(result.next())
            {
-              
+               
               String id="selectID"+count;
               String value="selectVAL"+count;
              
@@ -189,9 +192,10 @@ public class Add_Products extends HttpServlet {
       out.write("        <table>\n");
       out.write("          <tr>\n");
       out.write("            <th >Select Category :</th>\n");
-      out.write("            <td id=\"1\"><select id=\"crdNo\" name=\"crdNo\" >\n");
+      out.write("            <td><select id=\"crdNo\" name=\"category_ID\" >\n");
       
       
+              // category selection with (concat) attributes
               
               for(int i=0;i<count;i++)
               {
@@ -212,26 +216,36 @@ public class Add_Products extends HttpServlet {
       out.write("              </select></td>\n");
       out.write("          </tr>\n");
       out.write("\n");
+      out.write("<tr>");
+      out.write("<th>Set Product ID : </th>");
+      out.write("<td><input type='text' name='id'></td>");
+      out.write("</tr>\n");
       out.write("          <tr>\n");
-      out.write("            <th>Set card title :</th>\n");
-      out.write("            <td id=\"2\"><input type=\"text\" name=\"Title\" id=\"Title\" placeholder=\"new title\" ></td>\n");
+      out.write("            <th>Set Product Name :</th>\n");
+      out.write("            <td><input type=\"text\" name=\"name\"  ></td>\n");
       out.write("          </tr>\n");
       out.write("\n");
       out.write("          <tr>\n");
       out.write("            <th>Set Price :</th>\n");
-      out.write("            <td id=\"3\"><input type=\"text\" name=\"crdPrice\" id=\"crdPrice\" placeholder=\"new price\" ></td>\n");
+      out.write("            <td><input type=\"text\" name=\"price\"   ></td>\n");
       out.write("          </tr>\n");
       out.write("\n");
       out.write("          <tr>\n");
       out.write("            <th>Set Discription:</th>\n");
-      out.write("            <td id=\"4\"><textarea id=\"discript\" name=\"discript\" rows=\"4\" cols=\"50\" placeholder=\"new discription\"\n");
+      out.write("            <td><textarea  name=\"discription\" rows=\"4\" cols=\"50\" \n");
       out.write("                ></textarea></td>\n");
       out.write("          </tr>\n");
       out.write("\n");
       out.write("          <tr>\n");
-      out.write("            <th>Select Card Image:</th>\n");
+      out.write("            <th>Select Product Image:</th>\n");
       out.write("            <td><input type=\"file\" name=\"file1\" ></td>\n");
       out.write("          </tr>\n");
+      
+      out.write("          <tr>\n");
+      out.write("              <th>Is active?</th>\n");
+      out.write("              <td><input type=\"checkbox\" name=\"active\" value=\"TRUE\" />   <small>Active Product</small></td>\n");
+      out.write("          </tr>\n");
+      
       out.write("\n");
       out.write("          <tr>\n");
       out.write("\n");
