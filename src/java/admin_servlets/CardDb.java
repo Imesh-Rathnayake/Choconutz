@@ -1,4 +1,4 @@
-package servlets;
+package admin_servlets;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

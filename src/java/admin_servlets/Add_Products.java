@@ -1,5 +1,5 @@
 
-package servlets;
+package admin_servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -264,6 +264,10 @@ public class Add_Products extends HttpServlet {
       out.write("    </form>\n");
       out.write("\n");
       out.write("  </div>\n");
+      
+      
+      // adding now availble products
+      
       out.write("\n");
       out.write("\n");
       out.write("\n");

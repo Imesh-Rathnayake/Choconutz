@@ -1,4 +1,4 @@
-package servlets;
+package admin_servlets;
 
 import jakarta.mail.Authenticator;
 import jakarta.mail.Message;

@@ -6,23 +6,23 @@
     </servlet>
     <servlet>
         <servlet-name>updateCard</servlet-name>
-        <servlet-class>servlets.updateCard</servlet-class>
+        <servlet-class>admin_servlets.updateCard</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Manage_Orders</servlet-name>
-        <servlet-class>servlets.Manage_Orders</servlet-class>
+        <servlet-class>admin_servlets.Manage_Orders</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Complete_Order</servlet-name>
-        <servlet-class>servlets.Complete_Order</servlet-class>
+        <servlet-class>admin_servlets.Complete_Order</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>feedback</servlet-name>
-        <servlet-class>servlets.feedback</servlet-class>
+        <servlet-class>admin_servlets.feedback</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>sendMail</servlet-name>
-        <servlet-class>servlets.sendMail</servlet-class>
+        <servlet-class>admin_servlets.sendMail</servlet-class>
         <!-- https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api -->
     </servlet>
     <servlet>
@@ -31,7 +31,11 @@
     </servlet>
     <servlet>
         <servlet-name>Add_Products</servlet-name>
-        <servlet-class>servlets.Add_Products</servlet-class>
+        <servlet-class>admin_servlets.Add_Products</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Process_Order</servlet-name>
+        <servlet-class>admin_servlets.Process_Order</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>log</servlet-name>
@@ -69,5 +73,18 @@
     <servlet-mapping>
         <servlet-name>Add_Products</servlet-name>
         <url-pattern>/Add_Products</url-pattern>
+    </servlet-mapping>
+    <!--    customer login-->
+    <servlet>
+        <servlet-name>customerLoginServlet</servlet-name>
+        <servlet-class>admin_servlets.customerLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>customerLoginServlet</servlet-name>
+        <url-pattern>/customerLoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Process_Order</servlet-name>
+        <url-pattern>/Process_Order</url-pattern>
     </servlet-mapping>
 </web-app>

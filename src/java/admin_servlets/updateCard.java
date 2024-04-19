@@ -1,5 +1,5 @@
 
-package servlets;
+package admin_servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
