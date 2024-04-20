@@ -18,7 +18,7 @@
                             <a href="aboutus.jsp" class="footer__link">About Us</a>
                         </li>
                         <li>
-                            <a href="contact.jsp" class="footer__link">Customer Support</a>
+                            <a href="contact.jsp" class="footer__link">Contact Us</a>
                         </li>
                         <li>
                             <a href="feedback.jsp" class="footer__link">Feedback</a>

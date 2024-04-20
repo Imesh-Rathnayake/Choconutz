@@ -61,6 +61,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  text-transform: capitalize;
 }
 
 html {
@@ -946,7 +947,7 @@ body.dark-theme {
 }
 
 .cart__prices {
-  margin-top: 6rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
 }
@@ -965,10 +966,37 @@ body.dark-theme {
   font-weight: var(--font-medium);
 }
 
+
 /* Show cart */
 .show-cart {
   right: 0;
 }
+input.qty
+{
+  width:2.5em;
+  background: rgb(242 237 228 / 0%);
+  border:none;
+  color:rgb(239 190 138);
+  text-align:center;
+}
+.cart_proceed {
+    display: flex;
+    align-items: center;
+    column-gap: 1em;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+input.c-cart{
+  padding:3%;
+  border-radius:20px;
+  border:1px;
+  color:#bba8a2;
+  background:#000;
+}
+input.c-cart:hover{
+  background:#99593b;
+}
+
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
@@ -1330,3 +1358,68 @@ body.dark-theme {
     padding: 8px;
   }
 }
+
+
+.checkout-orders {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5%;
+}
+.checkout-form{
+    padding: 5%;
+}
+h3 {
+    text-align: center;
+    margin-bottom: 45px;
+    font-size: 2rem;
+    font-family: Georgia;
+    
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.inputBox {
+    flex-basis: calc(50% - 10px);
+    margin-bottom: 20px;
+}
+
+.box {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 600px) {
+    .inputBox {
+        flex-basis: 100%;
+    }
+}
+

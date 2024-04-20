@@ -3,16 +3,20 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
         <!--=============== FAVICON ===============-->
+        
         <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
         
         <!--=============== BOXICONS ===============-->
+        
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-        <!--=============== SWIPER CSS ===============--> 
+        
+        <!--=============== SWIPER CSS ===============-->
         <link rel="stylesheet" href="css/swiper-bundle.min.css">
         
         <!--=============== CSS ===============-->
+        
         <link rel="stylesheet" href="css/styles.css">
         
 
@@ -33,13 +37,13 @@
                             <a href="index.jsp" class="nav__link active-link">Home</a>
                         </li>
                         <li class="nav__item">
-                            <a href="index.jsp#featured" class="nav__link">Featured</a>
+                            <a href="index.jsp#featured" class="nav__link">Categories</a>
                         </li>
                         <li class="nav__item">
                             <a href="produts.jsp" class="nav__link">Products</a>
                         </li>
                         <li class="nav__item">
-                            <a href="index.jsp#new" class="nav__link">New</a>
+                            <a href="index.jsp#new" class="nav__link">Orders</a>
                         </li>
                     </ul>
 
@@ -57,6 +61,7 @@
                     </div>
                     <div class="nav__signup" id="signup">
                         <a href="login.jsp" class='login_btn change-theme' id="theme-button">Sign in</a>
+                        <i class="fa fa-user" aria-hidden="true"></i>
                     </div>
 					
 
@@ -85,15 +90,7 @@
 
                         <div class="cart__amount">
                             <div class="cart__amount-content">
-                                <span class="cart__amount-box">
-                                    <i class='bx bx-minus' ></i>
-                                </span>
-
-                                <span class="cart__amount-number">1</span>
-
-                                <span class="cart__amount-box">
-                                    <i class='bx bx-plus' ></i>
-                                </span>
+                                <input type="number" min="1" value="1" class="qty" name="p_qty">
                             </div>
 
                             <i class='bx bx-trash-alt cart__amount-trash' ></i>
@@ -112,15 +109,7 @@
 
                         <div class="cart__amount">
                             <div class="cart__amount-content">
-                                <span class="cart__amount-box">
-                                    <i class='bx bx-minus' ></i>
-                                </span>
-
-                                <span class="cart__amount-number">1</span>
-
-                                <span class="cart__amount-box">
-                                    <i class='bx bx-plus' ></i>
-                                </span>
+                                <input type="number" min="1" value="1" class="qty" name="p_qty">
                             </div>
 
                             <i class='bx bx-trash-alt cart__amount-trash' ></i>
@@ -139,15 +128,7 @@
 
                         <div class="cart__amount">
                             <div class="cart__amount-content">
-                                <span class="cart__amount-box">
-                                    <i class='bx bx-minus' ></i>
-                                </span>
-
-                                <span class="cart__amount-number">1</span>
-
-                                <span class="cart__amount-box">
-                                    <i class='bx bx-plus' ></i>
-                                </span>
+                                <input type="number" min="1" value="1" class="qty" name="p_qty">
                             </div>
 
                             <i class='bx bx-trash-alt cart__amount-trash' ></i>
@@ -159,5 +140,10 @@
             <div class="cart__prices">
                 <span class="cart__prices-item">3 items</span>
                 <span class="cart__prices-total">Rs 1050</span>
+            </div>
+            <div class="cart_proceed">
+                <input type="submit" class="c-cart" value="Continue Shopping">
+                <input type="submit" class="c-cart" value="Delete All">
+                <input type="submit" class="c-cart" value="Proceed">
             </div>
         </div>

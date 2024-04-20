@@ -147,3 +147,26 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+
+
+    // Function to toggle sign in link and user icon based on sign-in status
+    function toggleSignIn() {
+      var signInLink = document.getElementById('signin-link');
+      var userIcon = document.querySelector('.fa fa-user');
+
+      // Check if user is signed in (you can replace this with your actual sign-in logic)
+      var isSignedIn = false; // Example: Assume user is not signed in initially
+
+      if (isSignedIn) {
+        signInLink.style.display = 'none'; // Hide sign in link
+        userIcon.style.display = 'inline-block'; // Display user icon
+      } else {
+        signInLink.style.display = 'inline-block'; // Display sign in link
+        userIcon.style.display = 'none'; // Hide user icon
+      }
+    }
+
+    // Call toggleSignIn function when the page loads
+    window.onload = toggleSignIn;
+  

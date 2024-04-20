@@ -41,7 +41,7 @@
             <!--==================== categories ====================-->
             <section class="featured section container" id="featured">
                 <h2 class="section__title">
-                    Featured
+                    SHOP BY CATEGORY
                 </h2>
 
                 <div class="featured__container grid">
