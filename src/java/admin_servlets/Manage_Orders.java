@@ -90,7 +90,7 @@ public class Manage_Orders extends HttpServlet {
       out.write("    .card {\n");
       out.write("     width: auto;\n");
       out.write("     height: auto;\n");
-      out.write("     background: white;\n");
+      out.write("     background: rgba(255, 255, 255, 0.5);\n");
       out.write("     border-radius: 10px;\n");
       out.write("     \n");
       out.write("     margin-bottom: 20px;\n");

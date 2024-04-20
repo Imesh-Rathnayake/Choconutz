@@ -44,7 +44,7 @@ public class Add_Products extends HttpServlet {
        String dpass="";
        String query="SELECT id,name FROM Categories";
        
-       Connection con;
+       Connection con,con2;
        
        int count = 0;
        
@@ -71,12 +71,17 @@ public class Add_Products extends HttpServlet {
               
               count++;
            }
+           
+           con.close();
        
        }
        catch(ClassNotFoundException | SQLException e)
        {
            out.println(e.getMessage());
+          
        }
+       
+       
        
       out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"en\">\n");
@@ -88,11 +93,12 @@ public class Add_Products extends HttpServlet {
       out.write("  <title>Untitled Document</title>\n");
       out.write("  <!-- Bootstrap -->\n");
       out.write("  <link href=\"css/bootstrap-4.4.1.css\" rel=\"stylesheet\">\n");
-      out.write("  <link href=\"admin.css\" rel=\"stylesheet\" type=\"text/css\">\n");
+      
       out.write("  \n");
       out.write("\n");
       out.write("\n");
-      out.write("  <style>\n");
+      out.write("        <style>\n");
+      
       out.write("    td {\n");
       out.write("      border: 1px solid black;\n");
       out.write("      padding: 8px;\n");
@@ -106,20 +112,79 @@ public class Add_Products extends HttpServlet {
       out.write("\n");
       out.write("\n");
       out.write("    }\n");
-      out.write("\n");
-      out.write("    .align-end {\n");
-      out.write("      text-align: right;\n");
+      
+      out.write("    .transparent {\n");
+      out.write("      background: rgba(255, 255, 255, 0.5);\n");
       out.write("    }\n");
-      out.write("    \n");
-      out.write("    .navbar-nav .nav-item.active #prd {\n");
-      out.write("    height: 60px;\n");
-      out.write("}\n");
+      
       out.write("\n");
       out.write("\n");
-      out.write("    \n");
-      out.write("  </style>\n");
-      out.write("  \n");
-      out.write("  \n");
+      out.write("            .align-begin {\n");
+      out.write("                text-align:left;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .colour-blue{\n");
+      out.write("                color:blue;\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .colour-red{\n");
+      out.write("                color: red;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .align-end {\n");
+      out.write("                text-align:right;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .navbar-nav .nav-item.active #prd {\n");
+      out.write("                height: 60px;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .card {\n");
+      out.write("                width: auto;\n");
+      out.write("                height: auto;\n");
+      out.write("                background: rgba(255, 255, 255, 0.5);\n");
+      out.write("                border-radius: 10px;\n");
+      out.write("\n");
+      out.write("                margin-bottom: 20px;\n");
+      out.write("                padding: 10px;\n");
+      out.write("                flex-wrap: wrap;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .shadow {\n");
+      out.write("                box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),\n");
+      out.write("                    0 0  0 2px rgb(190, 190, 190),\n");
+      out.write("                    0.3em 0.3em 1em rgba(0,0,0,0.3);\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .container {\n");
+      out.write("                display: flex;\n");
+      out.write("                flex-wrap: wrap;\n");
+      out.write("                justify-content:center;\n");
+      out.write("                gap: 30px;/* Distribute items evenly along the row */\n");
+      out.write("            }\n");
+      out.write("            .nvbtn {\n");
+      out.write("                color: #4B3C3C;\n");
+      out.write("                background-image: -webkit-linear-gradient(270deg,rgba(198,248,248,1.00) 0%,rgba(141,152,224,1.00) 100%);\n");
+      out.write("                background-image: -moz-linear-gradient(270deg,rgba(198,248,248,1.00) 0%,rgba(141,152,224,1.00) 100%);\n");
+      out.write("                background-image: -o-linear-gradient(270deg,rgba(198,248,248,1.00) 0%,rgba(141,152,224,1.00) 100%);\n");
+      out.write("                background-image: linear-gradient(180deg,rgba(198,248,248,1.00) 0%,rgba(141,152,224,1.00) 100%);\n");
+      out.write("                border-style: none;\n");
+      out.write("                margin-left: 7px;\n");
+      out.write("                margin-right: 7px;\n");
+      out.write("                width: 100px;\n");
+      out.write("                height: 40px;\n");
+      out.write("                margin-top: 25px;\n");
+      out.write("                border-top-right-radius: 15px;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("        </style>\n");
+      
+      
       out.write("   <script>\n");
       out.write("      \n");
       out.write("      function clicked()\n");
@@ -141,19 +206,16 @@ public class Add_Products extends HttpServlet {
       out.write("      \n");
       out.write("      \n");
       out.write("  </script>\n");
-      out.write("  \n");
-      out.write("  \n");
-      out.write("  \n");
-      out.write("  \n");
-      out.write("  \n");
+      
+      
       out.write("</head>\n");
       out.write("\n");
       out.write("<body style=\"background-color:#e1f1fd\">\n");
-      out.write("  <br><br><br>\n");
-      out.write("<div class=\"container-fluid\">\n");
-      out.write("    <br><br><br>\n");
       out.write("\n");
-      out.write("    <nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" style=\"background-color: transparent !important;\">\n");
+      out.write("<div class=\"container-fluid\">\n");
+      out.write("    \n");
+      out.write("\n");
+      out.write("    <nav class=\"navbar navbar-expand-lg navbar-light \" style=\"background-color: transparent !important;\">\n");
       out.write("  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent3\"\n");
       out.write("    aria-controls=\"navbarSupportedContent3\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n");
       out.write("    <span class=\"navbar-toggler-icon\"></span>\n");
@@ -189,14 +251,16 @@ public class Add_Products extends HttpServlet {
       out.write("</nav>\n");
       out.write("    \n");
       out.write("    \n");
+      out.write("<br><br><center><h4>ADD - PRODUCTS</h4></center>");
       out.write("    \n");
-      out.write("  \n");
+      out.write(" <br> \n");
       out.write("    <form  action=\"updateCard\" method=\"POST\" enctype=\"multipart/form-data\" id=\"products\">\n");
       out.write("      <center>\n");
-      out.write("        <table>\n");
+      
+      out.write("        <table class='table table-bordered  card shadow' style='width:750px;'>\n");
       out.write("          <tr>\n");
       out.write("            <th >Select Category :</th>\n");
-      out.write("            <td><select id=\"crdNo\" name=\"category_ID\" >\n");
+      out.write("            <td><select id=\"crdNo\" name=\"category_ID\" class='transparent'>\n");
       
       
               // category selection with (concat) attributes
@@ -222,32 +286,32 @@ public class Add_Products extends HttpServlet {
       out.write("\n");
       out.write("<tr>");
       out.write("<th>Set Product ID : </th>");
-      out.write("<td><input type='text' name='id'></td>");
+      out.write("<td><input class='transparent' type='text' name='id'></td>");
       out.write("</tr>\n");
       out.write("          <tr>\n");
       out.write("            <th>Set Product Name :</th>\n");
-      out.write("            <td><input type=\"text\" name=\"name\"  ></td>\n");
+      out.write("            <td><input type=\"text\" name=\"name\" class='transparent' ></td>\n");
       out.write("          </tr>\n");
       out.write("\n");
       out.write("          <tr>\n");
       out.write("            <th>Set Price :</th>\n");
-      out.write("            <td><input type=\"text\" name=\"price\"   ></td>\n");
+      out.write("            <td><input type=\"text\" name=\"price\" class='transparent'  ></td>\n");
       out.write("          </tr>\n");
       out.write("\n");
       out.write("          <tr>\n");
       out.write("            <th>Set Discription:</th>\n");
-      out.write("            <td><textarea  name=\"discription\" rows=\"4\" cols=\"50\" \n");
+      out.write("            <td><textarea  name=\"discription\" rows=\"4\" cols=\"50\" class='transparent'\n");
       out.write("                ></textarea></td>\n");
       out.write("          </tr>\n");
       out.write("\n");
       out.write("          <tr>\n");
       out.write("            <th>Select Product Image:</th>\n");
-      out.write("            <td><input type=\"file\" name=\"file1\" ></td>\n");
+      out.write("            <td><input type=\"file\" name=\"file1\" class='transparent'></td>\n");
       out.write("          </tr>\n");
       
       out.write("          <tr>\n");
       out.write("              <th>Is active?</th>\n");
-      out.write("              <td><input type=\"checkbox\" name=\"active\" value=\"TRUE\" />   <small>Active Product</small></td>\n");
+      out.write("              <td><input class='transparent' type=\"checkbox\" name=\"active\" value=\"TRUE\" />   <small>Active Product</small></td>\n");
       out.write("          </tr>\n");
       
       out.write("\n");
@@ -265,8 +329,55 @@ public class Add_Products extends HttpServlet {
       out.write("\n");
       out.write("  </div>\n");
       
+      out.write("<br><br><center><h4>PRODUCTS - ADDED</h4></center><br>");
       
       // adding now availble products
+      
+      
+      String query1="SELECT id,name,price,image_url FROM Products";
+      
+      try
+       {
+           Class.forName("com.mysql.cj.jdbc.Driver");
+           con2=DriverManager.getConnection(url,dname,dpass);
+           PreparedStatement pst2=con2.prepareStatement(query1);
+           java.sql.ResultSet result2=pst2.executeQuery();
+           
+           
+         out.write("            <div class=\"container\">\n");  
+           
+           while(result2.next())
+           {
+               
+                out.write("\n");
+                out.write("\n");
+                out.write("                <div class=\"card shadow\">\n");
+                out.write("                    <img src='images/cardImage/"+result2.getString("image_url")+"' width=\"250\" height=\"200\" alt=\"1f95ba10-b00a-4521-9d13-bcac4b669518\"/>\n");
+                out.write("                    <span style=\"position: absolute; top: 10px; left: 10px; background-color:red; padding: 5px; color:whitesmoke; \"><b>RS "+result2.getInt("price")+"/=</b></span>\n");
+                out.write("                    <br>\n");
+                out.write("                    <center>\n");
+                out.write("                        \n");
+                out.write("                        <h5>"+result2.getString("name")+"</h5>\n");
+                out.write("                        \n");
+                out.write("                    </center>\n");
+                out.write("                </div>\n");
+                out.write("\n");
+                
+              
+           }
+           
+           
+           
+           con2.close();
+       
+       }
+       catch(ClassNotFoundException | SQLException e)
+       {
+           out.println(e.getMessage());
+          
+       }
+      
+      
       
       out.write("\n");
       out.write("\n");
