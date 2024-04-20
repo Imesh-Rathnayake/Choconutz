@@ -37,13 +37,13 @@
                             <a href="index.jsp" class="nav__link active-link">Home</a>
                         </li>
                         <li class="nav__item">
-                            <a href="index.jsp#featured" class="nav__link">Categories</a>
+                            <a href="index.jsp#Categories" class="nav__link">Categories</a>
                         </li>
                         <li class="nav__item">
                             <a href="produts.jsp" class="nav__link">Products</a>
                         </li>
                         <li class="nav__item">
-                            <a href="index.jsp#new" class="nav__link">Orders</a>
+                            <a href="order.jsp" class="nav__link">Orders</a>
                         </li>
                     </ul>
 

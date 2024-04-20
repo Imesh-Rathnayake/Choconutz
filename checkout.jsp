@@ -4,12 +4,12 @@
 
 <section class="display-orders">
 
-      <p> Glazed <span>(Rs 225/- x 1)</span> </p>
-      <p> Nutella <span>(Rs 320/- x 1)</span> </p>
-      <p> Kikkat,Cherry & Nutella <span>(Rs 480/- x 1)</span> </p>
-      <div class="grand-total">grand total : <span>Rs 1550/-</span></div>
+      <p> Glazed <span>(Rs 225 x 1)</span> </p>
+      <p> Nutella <span>(Rs 320 x 1)</span> </p>
+      <p> Kikkat,Cherry & Nutella <span>(Rs 480 x 1)</span> </p>
+      <div class="grand-total">grand total : <span>Rs 1550</span></div>
 </section>
-<h1>hi</h1>
+
 
 
 <section class="checkout-orders">
