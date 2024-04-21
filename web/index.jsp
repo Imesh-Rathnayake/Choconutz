@@ -33,14 +33,14 @@
                 text-align:right;
             }
 
-            .navbar-nav .nav-item.active #prd {
+            .navbar-nav .nav-item.active #dashboard {
                 height: 60px;
             }
 
             .card {
-                width: auto;
-                height: auto;
-                background: white;
+                width: 350px;
+                height: 200px;
+                background: rgba(255, 255, 255, 0.5);
                 border-radius: 10px;
 
                 margin-bottom: 20px;
@@ -135,10 +135,10 @@
                             </form>
                         </li>
                         <li class="nav-item active">
-                            <input type="button" value="Other" class="nvbtn">
+                            <input type="button" value="Other"  class="nvbtn">
                         </li>
                         <li class="nav-item active">
-                            <input type="button" value="Web" class="nvbtn">
+                            <input type="button" value="Dashboard" id="dashboard" class="nvbtn">
                         </li>
                     </ul>
                 </div>
@@ -147,14 +147,92 @@
 
             <div class="container">
 
+<!--                total pendings-->
 
                 <div class="card shadow">
-                    <img src="images/cardImage/1f95ba10-b00a-4521-9d13-bcac4b66951.JPG" width="250" height="200" alt="1f95ba10-b00a-4521-9d13-bcac4b669518"/>
-                    <span style="position: absolute; top: 10px; left: 10px; background-color:red; padding: 5px; color:whitesmoke; ">RS 970/=</span>
                     <br>
                     <center>
                         
-                        <h5>Chocolate Donut</h5>
+                        <h4 style="margin-top:15px;">$130/-</h4>
+                        
+                        <span style="margin-bottom:15px; margin-top:15px;   display: inline-block;  padding: 10px; width: 320px;" class="alert alert-info">Total Pendings</span>
+                        <br>
+                        <input type="submit" value="See Orders" style="margin-bottom:20px; display: inline-block; padding: 10px; width: 320px;" class="btn btn-outline-info" />
+                        
+                    </center>
+                </div>
+
+<!--                completed orders-->
+                
+                <div class="card shadow">
+                    <br>
+                    <center>
+                        
+                        <h4 style="margin-top:15px;">$30/-</h4>
+                        
+                        <span style="margin-bottom:15px; margin-top:15px;   display: inline-block;  padding: 10px; width: 320px;" class="alert alert-info">Completed Orders</span>
+                        <br>
+                        <input type="submit" value="See Orders" style="margin-bottom:20px; display: inline-block; padding: 10px; width: 320px;" class="btn btn-outline-info" />
+                        
+                    </center>
+                </div>
+
+<!--                placed orders-->
+                
+                <div class="card shadow">
+                    <br>
+                    <center>
+                        
+                        <h4 style="margin-top:15px;">3</h4>
+                        
+                        <span style="margin-bottom:15px; margin-top:15px;   display: inline-block;  padding: 10px; width: 320px;" class="alert alert-info">Orders Placed</span>
+                        <br>
+                        <input type="submit" value="See Orders" style="margin-bottom:20px; display: inline-block; padding: 10px; width: 320px;" class="btn btn-outline-info" />
+                        
+                    </center>
+                </div>
+                
+<!--                products added-->
+
+                <div class="card shadow">
+                    <br>
+                    <center>
+                        
+                        <h4 style="margin-top:15px;">3</h4>
+                        
+                        <span style="margin-bottom:15px; margin-top:15px;   display: inline-block;  padding: 10px; width: 320px;" class="alert alert-info">Products Added</span>
+                        <br>
+                        <input type="submit" value="See Products" style="margin-bottom:20px; display: inline-block; padding: 10px; width: 320px;" class="btn btn-outline-info" />
+                        
+                    </center>
+                </div>
+
+<!--                total users-->
+                
+                <div class="card shadow">
+                    <br>
+                    <center>
+                        
+                        <h4 style="margin-top:15px;">10</h4>
+                        
+                        <span style="margin-bottom:15px; margin-top:15px;   display: inline-block;  padding: 10px; width: 320px;" class="alert alert-info">Total Users</span>
+                        <br>
+                        <input type="submit" value="See Accounts" style="margin-bottom:20px; display: inline-block; padding: 10px; width: 320px;" class="btn btn-outline-info" />
+                        
+                    </center>
+                </div>
+
+<!--                total admins-->
+                
+                <div class="card shadow">
+                    <br>
+                    <center>
+                        
+                        <h4 style="margin-top:15px;">1</h4>
+                        
+                        <span style="margin-bottom:15px; margin-top:15px;   display: inline-block;  padding: 10px; width: 320px;" class="alert alert-info">Total Admins</span>
+                        <br>
+                        <input type="submit" value="See Accounts" style="margin-bottom:20px; display: inline-block; padding: 10px; width: 320px;" class="btn btn-outline-info" />
                         
                     </center>
                 </div>

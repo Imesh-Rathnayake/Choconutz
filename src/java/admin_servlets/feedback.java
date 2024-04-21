@@ -61,38 +61,96 @@ public class feedback extends HttpServlet {
       out.write("  <title>Untitled Document</title>\n");
       out.write("  <!-- Bootstrap -->\n");
       out.write("  <link href=\"css/bootstrap-4.4.1.css\" rel=\"stylesheet\">\n");
-      out.write("  <link href=\"admin.css\" rel=\"stylesheet\" type=\"text/css\">\n");
+      //out.write("  <link href=\"admin.css\" rel=\"stylesheet\" type=\"text/css\">\n");
       out.write("  \n");
       out.write("\n");
       out.write("\n");
-      out.write("  <style>\n");
+      out.write("        <style>\n");
+      
       out.write("    td {\n");
-      out.write("      border: 1px solid black;\n");
+      //out.write("      border: 1px solid black;\n");
       out.write("      padding: 8px;\n");
       out.write("      text-align: right;\n");
       out.write("\n");
       out.write("    }\n");
       out.write("\n");
       out.write("    th {\n");
-      out.write("      border: 1px solid black;\n");
+      //out.write("      border: 1px solid black;\n");
       out.write("      padding: 8px;\n");
       out.write("\n");
       out.write("\n");
       out.write("    }\n");
-      out.write("\n");
-      out.write("    .align-end {\n");
-      out.write("      text-align: right;\n");
+      
+      out.write("    .transparent {\n");
+      out.write("      background: rgba(255, 255, 255, 0.5);\n");
       out.write("    }\n");
-      out.write("    \n");
-      out.write("    .nav-item.active form #feed {\n");
-      out.write("        \n");
-      out.write("            height: 60px;\n");
+      
       out.write("\n");
-      out.write("}\n");
-      out.write("    \n");
       out.write("\n");
-      out.write("    \n");
-      out.write("  </style>\n");
+      out.write("            .align-begin {\n");
+      out.write("                text-align:left;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .colour-blue{\n");
+      out.write("                color:blue;\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .colour-red{\n");
+      out.write("                color: red;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .align-end {\n");
+      out.write("                text-align:right;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .navbar-nav .nav-item.active #feed {\n");
+      out.write("                height: 60px;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .card {\n");
+      out.write("                width: auto;\n");
+      out.write("                height: auto;\n");
+      out.write("                background: rgba(255, 255, 255, 0.5);\n");
+      out.write("                border-radius: 10px;\n");
+      out.write("\n");
+      out.write("                margin-bottom: 20px;\n");
+      out.write("                padding: 10px;\n");
+      out.write("                flex-wrap: wrap;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .shadow {\n");
+      out.write("                box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),\n");
+      out.write("                    0 0  0 2px rgb(190, 190, 190),\n");
+      out.write("                    0.3em 0.3em 1em rgba(0,0,0,0.3);\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .container {\n");
+      out.write("                display: flex;\n");
+      out.write("                flex-wrap: wrap;\n");
+      out.write("                justify-content:center;\n");
+      out.write("                gap: 30px;/* Distribute items evenly along the row */\n");
+      out.write("            }\n");
+      out.write("            .nvbtn {\n");
+      out.write("                color: #4B3C3C;\n");
+      out.write("                background-image: -webkit-linear-gradient(270deg,rgba(198,248,248,1.00) 0%,rgba(141,152,224,1.00) 100%);\n");
+      out.write("                background-image: -moz-linear-gradient(270deg,rgba(198,248,248,1.00) 0%,rgba(141,152,224,1.00) 100%);\n");
+      out.write("                background-image: -o-linear-gradient(270deg,rgba(198,248,248,1.00) 0%,rgba(141,152,224,1.00) 100%);\n");
+      out.write("                background-image: linear-gradient(180deg,rgba(198,248,248,1.00) 0%,rgba(141,152,224,1.00) 100%);\n");
+      out.write("                border-style: none;\n");
+      out.write("                margin-left: 7px;\n");
+      out.write("                margin-right: 7px;\n");
+      out.write("                width: 100px;\n");
+      out.write("                height: 40px;\n");
+      out.write("                margin-top: 25px;\n");
+      out.write("                border-top-right-radius: 15px;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("        </style>\n");
       out.write("  \n");
       out.write("  \n");
       
@@ -147,7 +205,7 @@ public class feedback extends HttpServlet {
       out.write("        \n");
       out.write("       <form action=\"feedback\" method=\"GET\">\n");
       out.write("        \n");
-      out.write("           <label><b>Select Date :</b></label><input type=\"date\" name=\"date\" value=\"\" />\n");
+      out.write("           <label><b>Select Date :</b></label><input type=\"date\" class='transparent' name=\"date\" value=\"\" />\n");
       out.write("           <input type=\"submit\" class=\"btn btn-info\" value=\"Search\" />\n");
       out.write("    </form> \n");
       out.write("        \n");
@@ -177,10 +235,10 @@ public class feedback extends HttpServlet {
                 con=DriverManager.getConnection(url,dname,dpass);
                 PreparedStatement pst=con.prepareStatement(query);
                 java.sql.ResultSet result=pst.executeQuery();
-                out.println("<br><h6>All feedbacks :</h6>");
+                out.println("<br><h6>All feedbacks</h6>");
                 
                 
-                out.println("<table align=\"center\" border=\"1\">");
+                out.println("<table align=\"center\" class='table table-bordered  card shadow'>");
                 out.println("<tr><th><center>Email</center></th><th><center>Feedback</center></th><th><center>Action</center></th></tr>");
             
             while (result.next()) 
@@ -190,7 +248,7 @@ public class feedback extends HttpServlet {
                 out.println("<td>" + result.getString("Email") + "</td>");
                 out.println("<td>" + result.getString("Feedback") + "</td>");
                 
-                out.println("<td><form method='GET' action='sendMail'><input type='hidden' name='Email' value='" + result.getString("Email") + "'>Subject: <input type='text' name='subject'><br><br>Body :<textarea name='body' rows='3' cols='20'></textarea><br><input type='submit' value='Reply'  class=\"btn btn-primary\"></form></td>");
+                out.println("<td><form method='GET' action='sendMail'><input type='hidden' name='Email' value='" + result.getString("Email") + "'>Subject: <input type='text' name='subject' class='transparent'><br><br>Body :<textarea class='transparent' name='body' rows='3' cols='20'></textarea><br><input type='submit' value='Reply'  class=\"btn btn-primary\"></form></td>");
                 out.println("</tr>");
             }
 
@@ -205,7 +263,7 @@ public class feedback extends HttpServlet {
                 java.sql.ResultSet result=pst.executeQuery();
                 out.println("<br><h6>Selected date : "+date+"</h6>");
                 
-                out.println("<table align=\"center\" border=\"1\">");
+                out.println("<table class='table table-bordered  card shadow' align=\"center\">");
                 out.println("<tr><th><center>Email</center></th><th><center>Feedback</center></th><th><center>Action</center></th></tr>");
             
                  while (result.next()) 
@@ -215,7 +273,7 @@ public class feedback extends HttpServlet {
                     out.println("<td>" + result.getString("Email") + "</td>");
                     out.println("<td>" + result.getString("Feedback") + "</td>");
 
-                    out.println("<td><form method='GET' action='sendMail'><input type='hidden' name='Email' value='" + result.getString("Email") + "'>Subject: <input type='text' name='subject'><br><br>Body :<textarea name='body' rows='3' cols='20'></textarea><br><input type='submit' value='Reply'  class=\"btn btn-primary\"></form></td>");
+                    out.println("<td><form method='GET' action='sendMail'><input type='hidden' name='Email' value='" + result.getString("Email") + "'>Subject: <input type='text' name='subject' class='transparent'><br><br>Body :<textarea class='transparent' name='body' rows='3' cols='20'></textarea><br><input type='submit' value='Reply'  class=\"btn btn-primary\"></form></td>");
                     out.println("</tr>");
                  }
 
