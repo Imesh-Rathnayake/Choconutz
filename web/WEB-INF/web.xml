@@ -37,6 +37,10 @@
         <servlet-name>Process_Order</servlet-name>
         <servlet-class>admin_servlets.Process_Order</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>dashboard</servlet-name>
+        <servlet-class>admin_servlets.dashboard</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>log</servlet-name>
         <url-pattern>/log</url-pattern>
@@ -86,5 +90,9 @@
     <servlet-mapping>
         <servlet-name>Process_Order</servlet-name>
         <url-pattern>/Process_Order</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>dashboard</servlet-name>
+        <url-pattern>/dashboard</url-pattern>
     </servlet-mapping>
 </web-app>
