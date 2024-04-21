@@ -34,13 +34,20 @@
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="index.jsp" class="nav__link active-link">Home</a>
+                            <a href="index.jsp" class="nav__link">Home</a>
                         </li>
                         <li class="nav__item">
-                            <a href="index.jsp#Categories" class="nav__link">Categories</a>
+                            <a href="#" class="nav__link">Categories</a>
+                            <div class="cat-list">
+                            <ul>
+                            <li class="cat-items"><a href="products.jsp#CATEGORY 1" class="cat__link">Category 1</a></li>
+                            <li class="cat-items"><a href="products.jsp#CATEGORY 2" class="cat__link">Category 2</a></li>
+                            <li class="cat-items"><a href="products.jsp#CATEGORY 3" class="cat__link">Category 3</a></li>
+                            </ul>
+                            </div>
                         </li>
                         <li class="nav__item">
-                            <a href="produts.jsp" class="nav__link">Products</a>
+                            <a href="products.jsp" class="nav__link">Products</a>
                         </li>
                         <li class="nav__item">
                             <a href="order.jsp" class="nav__link">Orders</a>
