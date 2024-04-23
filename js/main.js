@@ -170,3 +170,127 @@ themeButton.addEventListener('click', () => {
     // Call toggleSignIn function when the page loads
     window.onload = toggleSignIn;
   
+  
+  
+//  reivew form star selection
+
+const products = {
+    "donuts": ["Glazed Donut", "Chocolate Donut", "Strawberry Donut"],
+    "cakes": ["Chocolate Cake", "Vanilla Cake", "Strawberry Cake"],
+    "beverages": ["Coffee", "Tea", "Juice"],
+    "sundae": ["Chocolate Sundae", "Strawberry Sundae", "Vanilla Sundae"]
+};
+
+function showCategories() {
+    const categoriesDiv = document.getElementById("categories");
+    let html = "";
+
+    ['donuts', 'cakes', 'beverages', 'sundae'].forEach(category => {
+        html += `
+            <div class="category">
+                <label class="category-label">${category.charAt(0).toUpperCase() + category.slice(1)}</label>
+                <select name="${category}" class="category-select" onchange="showProducts(this)">
+                    <option value="0">Select ${category.charAt(0).toUpperCase() + category.slice(1)}</option>
+                    ${products[category].map(product => `<option value="${product}">${product}</option>`).join('')}
+                </select>
+                <div class="products" id="${category}-products" style="display: none;">
+                    <!-- Products will be displayed here -->
+                </div>
+            </div>
+        `;
+    });
+
+    categoriesDiv.innerHTML = html;
+}
+
+function showProducts(selectElement) {
+    const category = selectElement.value;
+    const productsDiv = document.getElementById(`${selectElement.name}-products`);
+    const categoryProducts = products[selectElement.name];
+
+    if (category !== "0") {
+        let html = '<div class="product">';
+        categoryProducts.forEach(product => {
+            html += `
+                <label for="${product}">${product}:</label>
+                <input type="number" name="${product}" id="${product}" min="0" placeholder="Quantity">
+            `;
+        });
+        html += '</div>';
+        productsDiv.innerHTML = html;
+        productsDiv.style.display = "block";
+    } else {
+        productsDiv.style.display = "none";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    showCategories();
+
+    const eventForm = document.getElementById("eventForm");
+    eventForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let isValid = true;
+
+        ['donuts', 'cakes', 'beverages', 'sundae'].forEach(category => {
+            const categorySelect = eventForm.elements[category];
+            const productsDiv = document.getElementById(`${category}-products`);
+
+            if (categorySelect.value !== "0") {
+                const selectedProducts = categorySelect.value.split(",");
+                selectedProducts.forEach(product => {
+                    const quantity = eventForm.elements[product.trim()].value;
+                    if (quantity === "" || parseInt(quantity) <= 0) {
+                        isValid = false;
+                        alert(`Please enter a valid quantity for ${product.trim()}`);
+                    }
+                });
+            }
+        });
+
+        if (isValid) {
+            eventForm.submit();
+        }
+    });
+});
+
+
+
+//cake inquires
+document.addEventListener("DOMContentLoaded", () => {
+    const cakeForm = document.getElementById("cakeForm");
+
+    cakeForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const name = cakeForm.elements["name"].value;
+        const email = cakeForm.elements["email"].value;
+        const phone = cakeForm.elements["phone"].value;
+        const cakeType = cakeForm.elements["cake-type"].value;
+        const cakeSize = cakeForm.elements["cake-size"].value;
+        const cakeFlavor = cakeForm.elements["cake-flavor"].value;
+        const cakeMessage = cakeForm.elements["cake-message"].value;
+        const cakeImage = cakeForm.elements["cake-image"].files[0];
+
+        if (name === "" || email === "" || phone === "" || cakeType === "" || cakeSize === "" || cakeFlavor === "" || cakeMessage === "" || !cakeImage) {
+            alert("Please fill in all fields and upload an image.");
+            return;
+        }
+
+        const inquiryDetails = {
+            Name: name,
+            Email: email,
+            Phone: phone,
+            "Cake Type": cakeType,
+            "Cake Size": cakeSize,
+            "Cake Flavor": cakeFlavor,
+            "Cake Message": cakeMessage,
+            "Cake Image": cakeImage.name
+        };
+
+        console.log("Inquiry Details:", inquiryDetails);
+        alert("Your inquiry has been submitted successfully!");
+        cakeForm.reset();
+    });
+});
+

@@ -11,6 +11,7 @@
         <!--=============== BOXICONS ===============-->
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <!--=============== SWIPER CSS ===============-->
         <link rel="stylesheet" href="css/swiper-bundle.min.css">
@@ -40,14 +41,15 @@
                             <a href="#" class="nav__link">Categories</a>
                             <div class="cat-list">
                             <ul>
-                            <li class="cat-items"><a href="products.jsp#CATEGORY 1" class="cat__link">Category 1</a></li>
-                            <li class="cat-items"><a href="products.jsp#CATEGORY 2" class="cat__link">Category 2</a></li>
-                            <li class="cat-items"><a href="products.jsp#CATEGORY 3" class="cat__link">Category 3</a></li>
+                            <li class="cat-items"><a href="products.jsp#Donuts" class="cat__link">Donuts</a></li>
+                            <li class="cat-items"><a href="products.jsp#Cakes" class="cat__link">Cakes</a></li>
+                            <li class="cat-items"><a href="products.jsp#Beverages" class="cat__link">Beverages</a></li>
+                            <li class="cat-items"><a href="products.jsp#Beverages" class="cat__link">Sundae</a></li>
                             </ul>
                             </div>
                         </li>
                         <li class="nav__item">
-                            <a href="products.jsp" class="nav__link">Products</a>
+                            <a href="aboutus.jsp" class="nav__link">About us</a>
                         </li>
                         <li class="nav__item">
                             <a href="order.jsp" class="nav__link">Orders</a>
@@ -65,10 +67,11 @@
 
                     <div class="nav__shop" id="cart-shop">
                         <i class='bx bx-shopping-bag' ></i>
+                        <span class="qnty">3</span>
                     </div>
                     <div class="nav__signup" id="signup">
                         <a href="login.jsp" class='login_btn change-theme' id="theme-button">Sign in</a>
-                        <i class="fa fa-user" aria-hidden="true"></i>
+<!--                        <i class="fa fa-user" aria-hidden="true"></i>-->
                     </div>
 					
 
