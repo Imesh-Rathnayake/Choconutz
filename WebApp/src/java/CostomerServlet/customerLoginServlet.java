@@ -79,13 +79,15 @@ public class customerLoginServlet extends HttpServlet {
                    if(userType.equals("admin"))
                    {
                        session.setAttribute("admin_id",userId);
-                       response.sendRedirect("admin.jsp");
+                       response.sendRedirect("Manage_Orders");
                        
                    }
                    else if(userType.equals("user"))
                    {
                        session.setAttribute("user_id", userId);
-                       response.sendRedirect("main.jsp");
+//                       response.sendRedirect("main.jsp");
+                         response.sendRedirect("main2.jsp");
+//                       response.sendRedirect("profile.jsp");
                    }
                    else{
                    
