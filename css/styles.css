@@ -24,6 +24,7 @@
   --product-price:#fff;
   --cat-link:rgb(9 2 1 );
   --cart-link:#490c0e;
+  --gift-title:#4770b1;
   
 
   /*========== Font and typography ==========*/
@@ -137,6 +138,8 @@ body.dark-theme {
     --product-price: hsl(31, 100%, 70%);
     --cat-link:rgb(57 24 17 );
     --cart-link:#ff7f00;
+    --gift-title:#4770b1;
+
 
 }
 
@@ -262,20 +265,26 @@ body.dark-theme {
   font-size: 1.25rem;
   cursor: pointer;
 }
-.nav__shop .qnty
-{
-    background:red;
-    border-radius: 50%;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    color:#fff;
-    position:absolute;
-    top: 23px;
-    left: 82.5%;
-    padding: 0px 4px;
-    font-size: .57em
+.nav__shop {
+    position: relative; /* Setting relative position */
 }
+
+.nav__shop .qnty {
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: 9%; /* Centering vertically */
+    transform: translateY(-50%); /* Adjusting for vertical centering */
+    right: -12px; /* Positioning to the right of the shopping bag icon */
+    padding: 0px 4px;
+    font-size: .57em;
+    z-index: 1; /* Ensuring it's above other elements */
+}
+
 .login_btn {
   font-size:16px;
 }
@@ -1214,6 +1223,8 @@ input.c-cart:hover{
 {
     margin-bottom: 3%;   
     font-size: 2rem;
+    font-family: ui-rounded;
+    color:var(--gift-title);
    
 }
 @media screen and (min-width:320px)
@@ -1222,6 +1233,11 @@ input.c-cart:hover{
 {
     padding: 7%;
     margin-top: 16%;
+}
+
+.gift-cards
+{
+    margin: 16% auto;
 }
 }
 @media screen and (min-width:1080px)
@@ -1377,7 +1393,7 @@ input.c-cart:hover{
     height: 200px;
   }
   .p__container {
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(3, 200px);
     justify-content: center;
     gap: 2.5rem;
   }
@@ -1466,6 +1482,7 @@ input.c-cart:hover{
   .new__container {
     padding-top: 2rem;
   }
+  
   .p__container{
     padding-top: 2rem;
   }
@@ -1719,13 +1736,14 @@ input.c-cart:hover{
 }
 
 .contact {
+    background: url(../images/background.png);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Adjust this to fit your needs */
-    padding: 5%;
-    margin-top: 3%;
+    height: 119vh;
+    padding: 8%;
+    margin-top: 6%;
 
 }
 
@@ -1734,6 +1752,7 @@ input.c-cart:hover{
     margin-bottom: 20px;
     border-bottom: 2px solid #007BFF;
     padding-bottom: 10px;
+    color:#000;
 }
 
 .contact-form {
@@ -1792,6 +1811,7 @@ input.c-cart:hover{
 }
 
 .review-form-container {
+    background: url(../images/story.png);
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -1983,7 +2003,7 @@ input.c-cart:hover{
 
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+   
     gap: 20px;
 }
 
@@ -2030,13 +2050,16 @@ input.c-cart:hover{
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+   
+    background: url(../images/gift-card.jpg);
+    z-index: -1;
 }
 
 .form-title {
     text-align: center;
     margin-bottom: 20px;
     font-size: 24px;
-    color: #1371bb;
+    color: #000;
 }
 
 .form-group {
@@ -2047,7 +2070,7 @@ input.c-cart:hover{
     display: block;
     font-size: 18px;
     margin-bottom: 8px;
-    color: #1371bb;
+    color: #000;
 }
 
 .form-control {
@@ -2087,8 +2110,9 @@ input.c-cart:hover{
 .section-title {
     text-align: center;
     margin-bottom: 10%;
-    font-size: 24px;
-    color: #333;
+    font-size: 37px;
+    color: var(--gift-title);
+    font-family: ui-rounded;
 }
 
 .card-container {
@@ -2098,20 +2122,21 @@ input.c-cart:hover{
 }
 
 .card {
-    background-color: #fff;
+    
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .card-image {
     width: 100%;
-    height: 200px;
+    height: auto;
     object-fit: cover;
 }
 
 .card-details {
-    padding: 20px;
+     position: relative; /* Set position relative for the container */
+    padding: 10%;
 }
 
 .card-title {
@@ -2127,6 +2152,114 @@ input.c-cart:hover{
 }
 
 .card-price {
+    position: absolute; /* Set position absolute for the price */
+    bottom: 10%; /* Adjust the distance from the bottom as needed */
+    left: 35%; /* Adjust the distance from the left as needed */
     font-size: 18px;
     color: #007BFF;
 }
+.add-to-cart-btn {
+   position: absolute; /* Set position absolute for the button */
+    top:-38%; /* Adjust the distance from the bottom as needed */
+    left: 50%; /* Position the button horizontally at the center */
+    transform: translateX(-50%); /* Center the button horizontally */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--first-color); /* You can change this to your desired color */
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--second-color); /* Change this to your desired hover color */
+}
+
+@media (max-width: 720px) {
+
+    .review-form,
+    .cake-form,
+    .gift-cards
+    {
+        margin:30% auto;
+        
+    }   
+    
+
+}
+.team {
+    padding: 10% 0;
+    text-align: center;
+}
+ 
+.team h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family:ui-rounded;
+    color:var(--gift-card);
+}
+ 
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+ 
+.card {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 18rem;
+    height: 25rem;
+    margin-top: 10px;
+}
+ 
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+ 
+.card-img {
+    width: 100%;
+    height: auto;
+}
+ 
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+ 
+.card-info button {
+    margin: 2rem 1rem;
+}
+ 
+.card-name {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+ 
+.card-role {
+    font-size: 1rem;
+    color: #888;
+    margin: 5px 0;
+}
+ 
+.card-email {
+    font-size: 1rem;
+    color: #555;
+}
+@media (max-width: 768px) {
+    
+    .team {
+        margin: 0 1rem;
+    }
+}
+ 
