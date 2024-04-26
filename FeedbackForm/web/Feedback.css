@@ -1,0 +1,52 @@
+body 
+{
+    background-color: lightpink;
+    background-size: cover;
+}
+h1
+{
+    font-size: 50px;
+    color: rgb(16, 1, 1);
+    text-align: center;
+    
+}
+h3
+{
+    font-size: 25px;
+}
+h4
+{
+    font-size: 20px;
+}
+#radio
+{
+    font-size: 20px;    
+}
+table
+{
+    font-size: 25px;
+}
+td{
+    padding: 10px 20px 0px 0px;
+}
+.txt
+{
+    width: 400px;
+    height: 40px;
+    border-radius: 8px;
+}
+.txtarea
+{
+    width: 400px;
+    height: 100px;
+    border-radius: 20px;
+}
+.btn
+{
+    width: 600px;
+    height: 30px;
+    color: aliceblue;
+    font-size: 20px;
+    background-color: darkblue;
+    border-radius: 8px;
+}
