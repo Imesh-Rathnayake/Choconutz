@@ -11,6 +11,7 @@
         <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
         <link href="admin1.css" rel="stylesheet" type="text/css">
 
+            
 
 
         <style>
@@ -76,7 +77,30 @@
                 border-top-right-radius: 15px;
             }
 
+            
+            .modal-dialog-top-right 
+            
+            {
+              position: fixed;
+              top: 120px; 
+              right: 50px; 
+              margin: 0;
+            }
+            
+            .account-position 
+            
+            {
+              position: fixed;
+              top: 40px; 
+              right: 70px; 
+              margin: 0;
+            }
 
+            .add-transparent
+            {
+                background:rgba(255, 255, 255, 0.5);
+                border-radius: 10px;
+            }
 
 
         </style>
@@ -139,9 +163,31 @@
                             <input type="button" value="Other"  class="nvbtn">
                         </li>
                         <li class="nav-item active">
-                            <input type="button" value="Dashboard" id="dashboard" class="nvbtn">
+                            
+                            <form action="dashboard" method="GET">
+                                <input type="submit" value="Dashboard" id="dashboard" class="nvbtn">
+                            </form>
+                            
                         </li>
+                        
+                        
                     </ul>
+                    
+<!--                    image button in here-->
+
+                    <a href="#" data-toggle="modal" data-target="#exampleModal" class="account-position " >
+                        <center>
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            
+                            <lord-icon
+                                src="https://cdn.lordicon.com/hrjifpbq.json"
+                                
+                                colors="primary:#66a1ee"
+                                style="width:50px;height:50px">
+                            </lord-icon>
+                            
+                        </center>
+                    </a>
                 </div>
             </nav><br><br>
 
@@ -245,10 +291,35 @@
 
         </div>
 
+        
+
+        <!-- Button trigger modal -->
 
 
-
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-top-right add-transparent" role="document">
+    <div class="modal-content add-transparent">
+      <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><center>Current Account</center></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        
+        <div class="alert alert-warning" role="alert">
+            User Name : Vinod Rahal<br><br>
+            Account Type : Admin
+        </div>
+        
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-danger">Log Out</button>
+      </div>
+    </div>
+  </div>
+</div>
     
 
 

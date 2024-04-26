@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
+
 package admin_servlets;
 
 import java.io.IOException;
@@ -147,6 +144,29 @@ public class feedback extends HttpServlet {
       out.write("                border-top-right-radius: 15px;\n");
       out.write("            }\n");
       out.write("\n");
+      out.write("            .modal-dialog-top-right \n");
+      out.write("            \n");
+      out.write("            {\n");
+      out.write("              position: fixed;\n");
+      out.write("              top: 120px; \n");
+      out.write("              right: 50px; \n");
+      out.write("              margin: 0;\n");
+      out.write("            }\n");
+      out.write("            \n");
+      out.write("            .account-position \n");
+      out.write("            \n");
+      out.write("            {\n");
+      out.write("              position: fixed;\n");
+      out.write("              top: 40px; \n");
+      out.write("              right: 70px; \n");
+      out.write("              margin: 0;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .add-transparent\n");
+      out.write("            {\n");
+      out.write("                background:rgba(255, 255, 255, 0.5);\n");
+      out.write("                border-radius: 10px;\n");
+      out.write("            }\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -157,11 +177,11 @@ public class feedback extends HttpServlet {
       out.write("</head>\n");
       out.write("\n");
       out.write("<body style=\"background-color:#e1f1fd\">\n");
-      out.write("  <br><br><br>\n");
+      out.write("  \n");
       out.write("<div class=\"container-fluid\">\n");
-      out.write("    <br><br><br>\n");
+      out.write("    \n");
       out.write("\n");
-      out.write("    <nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" style=\"background-color: transparent !important;\">\n");
+      out.write("    <nav class=\"navbar navbar-expand-lg navbar-light \" style=\"background-color: transparent !important;\">\n");
       out.write("  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent3\"\n");
       out.write("    aria-controls=\"navbarSupportedContent3\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n");
       out.write("    <span class=\"navbar-toggler-icon\"></span>\n");
@@ -195,13 +215,62 @@ public class feedback extends HttpServlet {
       out.write("        <input type=\"button\" value=\"Other\" class=\"nvbtn\">\n");
       out.write("      </li>\n");
       out.write("      <li class=\"nav-item active\">\n");
-      out.write("        <input type=\"button\" value=\"Web\" class=\"nvbtn\">\n");
+      out.write("                            <form action=\"dashboard\" method=\"GET\">\n");
+      out.write("                                <input type=\"submit\" value=\"Dashboard\" id=\"dashboard\" class=\"nvbtn\">\n");
+      out.write("                            </form>\n");
       out.write("      </li>\n");
       out.write("    </ul>\n");
+      
+      out.write("                    <a href=\"#\" data-toggle=\"modal\" data-target=\"#exampleModal\" class=\"account-position \" >\n");
+      out.write("                        <center>\n");
+      out.write("                            <script src=\"https://cdn.lordicon.com/lordicon.js\"></script>\n");
+      out.write("                            \n");
+      out.write("                            <lord-icon\n");
+      out.write("                                src=\"https://cdn.lordicon.com/hrjifpbq.json\"\n");
+      out.write("                                \n");
+      out.write("                                colors=\"primary:#66a1ee\"\n");
+      out.write("                                style=\"width:50px;height:50px\">\n");
+      out.write("                            </lord-icon>\n");
+      out.write("                            \n");
+      out.write("                        </center>\n");
+      out.write("                    </a>\n");
+      
+      
       out.write("  </div>\n");
       out.write("</nav>\n");
+      
+      
+      out.write("<!-- Modal -->\n");
+      out.write("<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n");
+      out.write("  <div class=\"modal-dialog modal-dialog-top-right add-transparent\" role=\"document\">\n");
+      out.write("    <div class=\"modal-content add-transparent\">\n");
+      out.write("      <div class=\"modal-header\">\n");
+      out.write("          <h5 class=\"modal-title\" id=\"exampleModalLabel\"><center>Current Account</center></h5>\n");
+      out.write("        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n");
+      out.write("          <span aria-hidden=\"true\">&times;</span>\n");
+      out.write("        </button>\n");
+      out.write("      </div>\n");
+      out.write("        \n");
+      out.write("        <div class=\"alert alert-warning\" role=\"alert\">\n");
+      out.write("            User Name : Vinod Rahal<br><br>\n");
+      out.write("            Account Type : Admin\n");
+      out.write("        </div>\n");
+      out.write("        \n");
+      out.write("      \n");
+      out.write("      <div class=\"modal-footer\">\n");
+      out.write("        <button type=\"button\" class=\"btn btn-outline-dark\" data-dismiss=\"modal\">Close</button>\n");
+      out.write("        <button type=\"button\" class=\"btn btn-outline-danger\">Log Out</button>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("</div>\n");
+      
+      
       out.write("\n");
       out.write("    <div class=\"container\">\n");
+      
+      
+      
       out.write("        \n");
       out.write("       <form action=\"feedback\" method=\"GET\">\n");
       out.write("        \n");
@@ -302,12 +371,17 @@ public class feedback extends HttpServlet {
       out.write("    \n");
       out.write("\n");
       out.write("  </div>\n");
+      
+      
+      
       out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("  \n");
+      
+      
       out.write("\n");
       out.write("\n");
       out.write("\n");

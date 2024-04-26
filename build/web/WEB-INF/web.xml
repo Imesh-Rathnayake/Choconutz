@@ -41,6 +41,10 @@
         <servlet-name>dashboard</servlet-name>
         <servlet-class>admin_servlets.dashboard</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>admin_servlets.NewServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>log</servlet-name>
         <url-pattern>/log</url-pattern>
@@ -94,5 +98,9 @@
     <servlet-mapping>
         <servlet-name>dashboard</servlet-name>
         <url-pattern>/dashboard</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
     </servlet-mapping>
 </web-app>
