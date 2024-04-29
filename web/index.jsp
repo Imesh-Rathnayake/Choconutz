@@ -11,7 +11,7 @@
         <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
         <link href="admin1.css" rel="stylesheet" type="text/css">
 
-            
+
 
 
         <style>
@@ -76,31 +76,15 @@
                 margin-top: 25px;
                 border-top-right-radius: 15px;
             }
-
             
-            .modal-dialog-top-right 
-            
-            {
-              position: fixed;
-              top: 120px; 
-              right: 50px; 
-              margin: 0;
-            }
-            
-            .account-position 
-            
-            {
-              position: fixed;
-              top: 40px; 
-              right: 70px; 
-              margin: 0;
-            }
-
             .add-transparent
             {
                 background:rgba(255, 255, 255, 0.5);
                 border-radius: 10px;
             }
+
+
+            
 
 
         </style>
@@ -163,124 +147,112 @@
                             <input type="button" value="Other"  class="nvbtn">
                         </li>
                         <li class="nav-item active">
-                            
+
                             <form action="dashboard" method="GET">
                                 <input type="submit" value="Dashboard" id="dashboard" class="nvbtn">
                             </form>
-                            
-                        </li>
-                        
-                        
-                    </ul>
-                    
-<!--                    image button in here-->
 
-                    <a href="#" data-toggle="modal" data-target="#exampleModal" class="account-position " >
-                        <center>
-                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
-                            
-                            <lord-icon
-                                src="https://cdn.lordicon.com/hrjifpbq.json"
-                                
-                                colors="primary:#66a1ee"
-                                style="width:50px;height:50px">
-                            </lord-icon>
-                            
-                        </center>
-                    </a>
+                        </li>
+
+
+                    </ul>
+
+                    <!--                    image button in here-->
+
+
                 </div>
             </nav><br><br>
 
 
             <div class="container">
 
-<!--                total pendings-->
+                <!--                total pendings-->
 
                 <div class="card shadow">
                     <br>
                     <center>
-                        
+
                         <h4 style="margin-top:15px;">$130/-</h4>
-                        
+
                         <span style="margin-bottom:15px; margin-top:15px;   display: inline-block;  padding: 10px; width: 320px;" class="alert alert-info">Total Pendings</span>
                         <br>
                         <input type="submit" value="See Orders" style="margin-bottom:20px; display: inline-block; padding: 10px; width: 320px;" class="btn btn-outline-info" />
-                        
+
                     </center>
                 </div>
 
-<!--                completed orders-->
-                
+                <!--                completed orders-->
+
                 <div class="card shadow">
                     <br>
                     <center>
-                        
+
                         <h4 style="margin-top:15px;">$30/-</h4>
-                        
+
                         <span style="margin-bottom:15px; margin-top:15px;   display: inline-block;  padding: 10px; width: 320px;" class="alert alert-info">Completed Orders</span>
                         <br>
                         <input type="submit" value="See Orders" style="margin-bottom:20px; display: inline-block; padding: 10px; width: 320px;" class="btn btn-outline-info" />
-                        
+
                     </center>
                 </div>
 
-<!--                placed orders-->
-                
+                <!--                placed orders-->
+
                 <div class="card shadow">
                     <br>
                     <center>
-                        
+
                         <h4 style="margin-top:15px;">3</h4>
-                        
+
                         <span style="margin-bottom:15px; margin-top:15px;   display: inline-block;  padding: 10px; width: 320px;" class="alert alert-info">Orders Placed</span>
                         <br>
                         <input type="submit" value="See Orders" style="margin-bottom:20px; display: inline-block; padding: 10px; width: 320px;" class="btn btn-outline-info" />
-                        
+
                     </center>
                 </div>
-                
-<!--                products added-->
+
+                <!--                products added-->
 
                 <div class="card shadow">
                     <br>
                     <center>
-                        
+
                         <h4 style="margin-top:15px;">3</h4>
-                        
+
                         <span style="margin-bottom:15px; margin-top:15px;   display: inline-block;  padding: 10px; width: 320px;" class="alert alert-info">Products Added</span>
                         <br>
                         <input type="submit" value="See Products" style="margin-bottom:20px; display: inline-block; padding: 10px; width: 320px;" class="btn btn-outline-info" />
-                        
+
                     </center>
                 </div>
 
-<!--                total users-->
-                
+                <!--                total users-->
+
                 <div class="card shadow">
                     <br>
                     <center>
-                        
+
                         <h4 style="margin-top:15px;">10</h4>
-                        
+
                         <span style="margin-bottom:15px; margin-top:15px;   display: inline-block;  padding: 10px; width: 320px;" class="alert alert-info">Total Users</span>
                         <br>
                         <input type="submit" value="See Accounts" style="margin-bottom:20px; display: inline-block; padding: 10px; width: 320px;" class="btn btn-outline-info" />
-                        
+
                     </center>
                 </div>
 
-<!--                total admins-->
-                
+                <!--                total admins-->
+
                 <div class="card shadow">
                     <br>
                     <center>
-                        
+
                         <h4 style="margin-top:15px;">1</h4>
-                        
+
                         <span style="margin-bottom:15px; margin-top:15px;   display: inline-block;  padding: 10px; width: 320px;" class="alert alert-info">Total Admins</span>
                         <br>
                         <input type="submit" value="See Accounts" style="margin-bottom:20px; display: inline-block; padding: 10px; width: 320px;" class="btn btn-outline-info" />
-                        
+
                     </center>
                 </div>
 
@@ -291,36 +263,47 @@
 
         </div>
 
-        
 
-        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Open modal </button>
 
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-top-right add-transparent" role="document">
-    <div class="modal-content add-transparent">
-      <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><center>Current Account</center></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-        
-        <div class="alert alert-warning" role="alert">
-            User Name : Vinod Rahal<br><br>
-            Account Type : Admin
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog add-transparent" role="document">
+                <form action="sendMail" method="POST">
+                <div class="modal-content add-transparent">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Send Reply Email</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Subject:</label>
+                                <input type="text" class="form-control add-transparent" id="recipient-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Message:</label>
+                                <textarea class="form-control add-transparent" id="message-text"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                        <button type="reset" class="btn btn-outline-warning">Clear</button>
+                        <button type="submit" class="btn btn-outline-primary">Send message</button>
+                    </div>
+                </div>
+                </form>
+            </div>
         </div>
+
+
+
         
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-outline-danger">Log Out</button>
-      </div>
-    </div>
-  </div>
-</div>
-    
+
+
+
 
 
 

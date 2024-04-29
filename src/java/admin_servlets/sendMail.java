@@ -99,7 +99,7 @@ public class sendMail extends HttpServlet {
             out.println("<body>");
             out.println("<script type=\"text/javascript\">");
             out.println("alert('Email sent completed.');");
-            out.println("window.location.href = 'index.jsp';"); 
+            out.println("window.location.href = 'http://localhost:8080/webApp1/feedback';"); 
             out.println("</script>");
             out.println("</body>");
             out.println("</html>");
