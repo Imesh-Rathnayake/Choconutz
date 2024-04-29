@@ -41,47 +41,63 @@
             <!--==================== categories ====================-->
             <section class="featured section container" id="featured">
                 <h2 class="section__title">
-                    Featured
+                    SHOP BY CATEGORY
                 </h2>
 
                 <div class="featured__container grid">
                     <article class="featured__card">
-                        <span class="featured__tag">Sale</span>
+                        
 
                         <img src="images/featured1.png" alt="" class="featured__img">
 
                         <div class="featured__data">
-                            <h3 class="featured__title">Glazed</h3>
-                            <span class="featured__price">Rs 225</span>
+                            <h3 class="featured__title">Donuts</h3>
+                            <br>
+                            <br>                            
                         </div>
 
-                        <button class="button featured__button">ADD TO CART</button>
+                      <a href="products.jsp" class="featured__button"> Explore</a>  
                     </article>
 
                     <article class="featured__card">
-                        <span class="featured__tag">Sale</span>
+                        
 
-                        <img src="images/featured2.png" alt="" class="featured__img">
+                        <img src="images/cake.png" alt="" class="featured__img">
 
                         <div class="featured__data">
-                            <h3 class="featured__title">Blueberry Glaze</h3>
-                            <span class="featured__price">Rs 250</span>
+                            <h3 class="featured__title">Cakes</h3>
+                            <br>
+                            <br>
                         </div>
 
-                        <button class="button featured__button">ADD TO CART</button>
+                        <a href="products.jsp" class="featured__button"> Explore</a>
                     </article>
 
                     <article class="featured__card">
-                        <span class="featured__tag">Sale</span>
+                        
 
-                        <img src="images/featured3.png" alt="" class="featured__img">
+                        <img src="images/drinks.png" alt="" class="featured__img">
 
                         <div class="featured__data">
-                            <h3 class="featured__title">Nutella</h3>
-                            <span class="featured__price">Rs 320</span>
+                            <h3 class="featured__title">Beverages</h3>
+                            <br>
+                            <br>
                         </div>
 
-                        <button class="button featured__button">ADD TO CART</button>
+                        <a href="products.jsp" class="featured__button"> Explore</a>
+                    </article>
+                     <article class="featured__card">
+                        
+
+                        <img src="images/sundae.png" alt="" class="featured__img">
+
+                        <div class="featured__data">
+                            <h3 class="featured__title">Sundae</h3>
+                            <br>
+                            <br>
+                        </div>
+
+                        <a href="products.jsp" class="featured__button"> Explore</a>
                     </article>
                 </div>
             </section>
@@ -115,7 +131,7 @@
             <!--==================== PRODUCTS ====================-->
             <section class="products section container" id="products">
                 <h2 class="section__title">
-                    Products
+                    Most Popular
                 </h2>
 
                 <div class="products__container grid">

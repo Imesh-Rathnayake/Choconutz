@@ -1,32 +1,30 @@
 <%@ include file="jsp/header.jsp"%>
-<!--==================== MAIN ====================-->
-        
 
-            <!--==================== STORY ====================-->
+<!--==================== STORY ====================-->
             <section class="story section container">
                 <div class="story__container grid">
                     <div class="story__data">
                         <h2 class="section__title story__section-title">
-                            Our Story
+                            About Us
                         </h2>
     
                         <h1 class="story__title">
-                            The Sweet Symphony of <br> Choco Nutz? Donut Shop
+                            Welcome to <br> Choco Nutz!
                         </h1>
     
                         <p class="story__description">
-                            
+At Choco Nutz, we believe in crafting delightful experiences through our delectable offerings. As a premier bakery shop, we take pride in offering a wide array of sweet indulgences, ranging from heavenly cakes to irresistible donuts, refreshing bubble tea, and delightful sundaes.
 
-Nestled in the vibrant heart of Colombo, Choco Nutz? Donut Shop is a culinary gem that brings the timeless allure of Western donut flavors to the tropical shores of Sri Lanka. Our journey began with a simple yet passionate dream: to craft donuts that not only satisfy the sweet tooth but also ignite a sense of joy and wonder with each bite.
+Our journey began with a passion for creating moments of joy and celebration. Every cake, donut, bubble tea, and sundae that we serve is a testament to our commitment to quality, flavor, and creativity. With a focus on using the finest ingredients and artisanal techniques, we strive to deliver nothing short of perfection in every bite.
 
-Drawing inspiration from global trends and local palates, we meticulously handcraft each donut using only the finest ingredients, ensuring a perfect balance of flavors and textures that tantalize the taste buds. From classic chocolate-glazed delights to innovative creations infused with tropical twists, our menu is a delightful symphony of indulgence that caters to both traditionalists and adventurous foodies alike.
+Whether you're celebrating a special occasion or simply craving a sweet treat, Choco Nutz is your go-to destination. Our dedicated team is here to cater to your sweet desires, ensuring that each visit leaves you with a smile.
 
-But Choco Nutz? is more than just a donut shop; it's a cozy sanctuary where friends and families come together to create cherished memories over shared moments of sweetness. Our warm and inviting ambiance, paired with exceptional customer service, has made us a beloved destination for locals and tourists seeking a truly exceptional donut experience in Colombo.
+Come join us on a flavorful journey at Choco Nutz, where every bite is a taste of happiness!
 
-As we continue to evolve and innovate, our commitment remains unchanged: to delight, inspire, and spread the joy of donuts one delicious creation at a time. So come join us on this sweet journey and discover why Choco Nutz? is not just a name, but a testament to the passion and dedication that goes into every donut we make.
+Feel free to adjust and customize this description to better fit your brand voice and ethos. Let me know if you need further assistance!
                         </p>
     
-                        
+                        <a href="aboutus.jsp" class="button button--small">Discover</a>
                     </div>
 
                     <div class="story__images">
@@ -36,26 +34,62 @@ As we continue to evolve and innovate, our commitment remains unchanged: to deli
                 </div>
             </section>
 
-      
-            <!--==================== NEWSLETTER ====================-->
-            <section class="newsletter section container">
-                <div class="newsletter__bg grid">
-                    <div>
-                        <h2 class="newsletter__title">Subscribe Our <br> Newsletter</h2>
-                        <p class="newsletter__description">
-                            Don't miss out on your discounts. Subscribe to our email 
-                            newsletter to get the best offers, discounts, coupons, 
-                            gifts and much more.
-                        </p>
-                    </div>
 
-                    <form action="" class="newsletter__subscribe">
-                        <input type="email" placeholder="Enter your email" class="newsletter__input">
-                        <button class="button">
-                            SUBSCRIBE
-                        </button>
-                    </form>
+
+
+
+
+
+
+
+
+<section class="team">
+        <h1>Meet Our Team</h1>
+        <div class="team-cards">
+           
+            <!-- Cards here -->
+            <!-- Card 1 -->
+           
+            <div class="card">
+                <div class="card-img">
+                    <img src=
+"images/imesh.jpeg" alt="User 1">
                 </div>
-            </section>
-        </main>
+                <div class="card-info">
+                    <h2 class="card-name">Jane</h2>
+                    <p class="card-role">CEO and Founder</p>
+                    <p class="card-email">jane@example.com</p>
+                    <p><button class="button">Contact</button></p>
+                </div>
+            </div>
+ 
+            <!-- Card 2 -->
+           
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/imesh.jpeg" alt="User 2">
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">Miller</h2>
+                    <p class="card-role">Co-Founder</p>
+                    <p class="card-email">Miller@example.com</p>
+                    <p><button class="button">Contact</button></p>
+                </div>
+            </div>
+           
+            <!-- Card 3 -->
+           
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/imesh.jpeg" alt="User 3">
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">Joe</h2>
+                    <p class="card-role">Co-Founder</p>
+                    <p class="card-email">Joe@example.com</p>
+                    <p><button class="button">Contact</button></p>
+                </div>
+            </div>
+        </div>
+    </section>
 <%@ include file="jsp/footer.jsp"%>

@@ -59,7 +59,7 @@ public class customerLoginServlet extends HttpServlet {
 //        processRequest(request, response);
           String username = request.getParameter("uname");
           String password = request.getParameter("pwd");
-          HttpSession session = request.getSession();
+          HttpSession session = request.getSession(true);
           
        
            try{
@@ -69,7 +69,7 @@ public class customerLoginServlet extends HttpServlet {
            
                 //get data from login table using query
                Statement stm =  con.createStatement();
-               String  query = "select * from customers where username='"+username+"' AND password='"+password+"'";
+               String  query = "select * from users where name='"+username+"' AND password='"+password+"'";
                ResultSet rs = stm.executeQuery(query);
                
                if(rs.next()){
@@ -79,15 +79,18 @@ public class customerLoginServlet extends HttpServlet {
                    if(userType.equals("admin"))
                    {
                        session.setAttribute("admin_id",userId);
-                       response.sendRedirect("Manage_Orders");
+                       response.sendRedirect("admin_page.jsp");
                        
                    }
                    else if(userType.equals("user"))
                    {
                        session.setAttribute("user_id", userId);
-//                       response.sendRedirect("main.jsp");
-                         response.sendRedirect("main2.jsp");
-//                       response.sendRedirect("profile.jsp");
+//                       System.out.println(userId);
+                        request.setAttribute("message",userId);
+                         RequestDispatcher dispatcher = request.getRequestDispatcher("test.jsp");
+//                      response.sendRedirect("main.jsp");
+                       response.sendRedirect("index.jsp");
+//                      response.sendRedirect("profile.jsp");
                    }
                    else{
                    

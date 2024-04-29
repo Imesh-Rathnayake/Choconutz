@@ -6,10 +6,14 @@
 package CostomerServlet;
 
 import customerController.customerController;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +25,11 @@ import javax.servlet.http.Part;
  *
  * @author asus
  */
+@MultipartConfig(
+    fileSizeThreshold = 1024 * 1024, // 1MB
+    maxFileSize = 1024 * 1024 * 5,    // 5MB
+    maxRequestSize = 1024 * 1024 * 10 // 10MB
+)
 @WebServlet(name = "customerUptadeServlet", urlPatterns = {"/customerUptadeServlet"})
 public class customerUptadeServlet extends HttpServlet {
 
@@ -69,40 +78,72 @@ public class customerUptadeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
 
-        HttpSession session = request.getSession();
-        String username = request.getParameter("uname");
+//        HttpSession session = request.getSession();
+        int userId = Integer.parseInt(request.getParameter("id"));
+        String username = request.getParameter("name");
         String email = request.getParameter("email");
-        String phoneNumber = request.getParameter("phoneNumber");
-        String OldPwd = request.getParameter("oldPwd");
-        String NewPwd = request.getParameter("newPwd");
+        String phoneNumber = request.getParameter("pnumber");
+        String OldPwd = request.getParameter("old_pass");
+        String NewPwd = request.getParameter("new_pass");
         String ImgUrl = "";
-        String operation = request.getParameter("operation");
-        int userId = 1;
+        String operation = request.getParameter("update");
+       
         RequestDispatcher dispatcher;
-        Part profilePic = request.getPart("profilePic");
-         if (profilePic != null && profilePic.getSize() > 0) {
-            String fileName = profilePic.getSubmittedFileName();
-            String savePath = "UserProfilePic/" + fileName;
-            profilePic.write(savePath);
-            ImgUrl = savePath; // Update image URL
-        }
+        
+//       Part file = null;
+      try {
+        Part profilePic = request.getPart("image");
+        if (profilePic != null && profilePic.getSize() > 0) {
+        String fileName = profilePic.getSubmittedFileName();
+        String savePath = "C:/Users/asus/Desktop/WebApp/web/uploaded_img/" + fileName;
+            String uploadPath;
+          try (FileOutputStream fos = new FileOutputStream(savePath);
+                        InputStream is = profilePic.getInputStream()) {
+                    byte[] data = new byte[is.available()];
+                    is.read(data);
+                    fos.write(data);
+//                    out.println("Image successfully saved in folder location.");
+                }
+        ImgUrl = fileName; // Update image URL
+    }
+     } catch (IOException | ServletException e) {
+              request.setAttribute("message", e.getMessage());
+                dispatcher = request.getRequestDispatcher("user_profile.jsp");
+               dispatcher.forward(request, response);// Handle the exception appropriately
+     }
          
         switch (operation) {
-        case "update password":
+        case "UpdatePassword":
             customerController c2 = new customerController();
            String status1 = c2.customerPasswordUptade(userId, OldPwd, NewPwd);
            request.setAttribute("message", status1);
-           dispatcher = request.getRequestDispatcher("profile.jsp");
+           dispatcher = request.getRequestDispatcher("user_profile.jsp");
            dispatcher.forward(request, response);
-        ;
         break;
-         case "update details":
+        
+         case "UpdateDetails":
          customerController c1 = new customerController();
-         String status2 = c1.customerUptade(userId, username, email, phoneNumber, OldPwd, NewPwd, ImgUrl);
+         String status2 = c1.customerUpdate(userId, username, email, phoneNumber, ImgUrl);
          request.setAttribute("message", status2);
-         dispatcher = request.getRequestDispatcher("profile.jsp");
+         dispatcher = request.getRequestDispatcher("user_profile.jsp");
+         dispatcher.forward(request, response);
+        break;
+        
+         case "Admin_UpdatePassword":
+         customerController c3 = new customerController();
+         String status3 = c3.customerPasswordUptade(userId, OldPwd, NewPwd);
+         request.setAttribute("message", status3);
+         dispatcher = request.getRequestDispatcher("admin_profile.jsp");
+         dispatcher.forward(request, response);
+        break;
+        
+         case "Admin_UpdateDetails":
+         customerController c4 = new customerController();
+         String status4 = c4.customerUpdate(userId, username, email, phoneNumber, ImgUrl);
+         request.setAttribute("message", status4);
+         dispatcher = request.getRequestDispatcher("admin_profile.jsp");
          dispatcher.forward(request, response);
         break;
         default:
@@ -111,8 +152,8 @@ public class customerUptadeServlet extends HttpServlet {
        }
          
          
-         customerController c1 = new customerController();
-         String status = c1.customerUptade(userId, username, email, phoneNumber, OldPwd, NewPwd, ImgUrl);
+//         customerController c1 = new customerController();
+//         String status = c1.customerUptade(userId, username, email, phoneNumber, OldPwd, NewPwd, ImgUrl);
         
     }
 
