@@ -3,22 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Order;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.*;
 
 /**
  *
  * @author 94781
  */
-@WebServlet(name = "OrderServlets", urlPatterns = {"/OrderServlet"})
-public class OrderServlet extends HttpServlet {
+public class BookServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +35,10 @@ public class OrderServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet OrderServlet</title>");            
+            out.println("<title>Servlet BookServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet OrderServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet BookServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -72,19 +70,27 @@ public class OrderServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String name = request.getParameter("name");
-        String number = request.getParameter("number");
-        String email = request.getParameter("email");
-        String method = request.getParameter("method");
-        String flat = request.getParameter("flat");
-        String street = request.getParameter("street");
-        String city = request.getParameter("city");
-        String state = request.getParameter("state");
-        String country = request.getParameter("country");
-        String pin_code = request.getParameter("pin_code");
         
-        Check c = new Check();
-        c.addOrder(name,number,email,method,flat,street,city,state,country,pin_code);
+        PrintWriter out=response.getWriter();
+        Connection con = null;
+        Statement stmt = null;
+        int bookid = Integer.parseInt(request.getParameter("bid"));
+        String title = request.getParameter("btitel");
+        String author = request.getParameter("bauthor");
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/book", "root", "");
+            stmt = con.createStatement();
+            stmt.executeUpdate("INSERT INTO book VALUES("+bookid+",'"+title+"','"+author+"')");
+            out.println("<h1>Successful</h1>");
+        }
+        catch(ClassNotFoundException | SQLException e)
+        {
+            out.println("Sorry");
+        }
+        
+        
         //processRequest(request, response);
     }
 
