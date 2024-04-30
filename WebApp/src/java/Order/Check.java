@@ -33,9 +33,9 @@ class Check {
         }
     }
 
-    void addOrder(String name, String number, String email, int method, String flat, String street, String city, String state, String country, String pin_code) {
+    void addOrder(String name, String number, String email, String method, String flat, String street, String city, String state, String country, String pin_code) {
        
-        String query = "INSERT INTO customers (customer_id,fname,number,email,shipp_address,pin_code) VALUES('"+method+"','"+name+"','"+number+"','"+email+"','"+flat+","+street+","+city+","+state+","+country+",'"+pin_code+"')";
+        String query = "INSERT INTO orders (name,number,email,address,method) VALUES("+name+",'"+number+"','"+email+"','"+flat+","+street+","+city+","+state+","+country+",'"+method+"')";                                    
         connectToDb();
         
         try {
