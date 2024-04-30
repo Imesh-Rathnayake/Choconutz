@@ -10,5 +10,9 @@ package CustomerController;
  * @author User
  */
 public class customerController {
+
+    public String customerRegister(String username, String email, String phone, String password) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

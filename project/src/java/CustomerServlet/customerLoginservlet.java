@@ -48,7 +48,6 @@ public class customerRegisterServlet extends HttpServlet {
     }
 
   
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
@@ -84,8 +83,7 @@ public class customerRegisterServlet extends HttpServlet {
     }
 
  
-    @Override
-    public String getServletInfo() {
+     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
