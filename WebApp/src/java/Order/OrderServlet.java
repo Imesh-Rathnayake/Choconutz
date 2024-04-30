@@ -75,7 +75,7 @@ public class OrderServlet extends HttpServlet {
         String name = request.getParameter("name");
         String number = request.getParameter("number");
         String email = request.getParameter("email");
-        String method = request.getParameter("method");
+        int method = Integer.parseInt(request.getParameter("method"));
         String flat = request.getParameter("flat");
         String street = request.getParameter("street");
         String city = request.getParameter("city");

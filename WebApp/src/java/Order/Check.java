@@ -29,20 +29,20 @@ class Check {
             Connection con = DriverManager.getConnection(url, "root", "");
             st = con.createStatement();
         }catch(ClassNotFoundException | SQLException ex){
-            Logger.getLogger(Book.class.getName()).log(Level.SEVERE,null, ex);
+            Logger.getLogger(Check.class.getName()).log(Level.SEVERE,null, ex);
         }
     }
 
-    void addOrder(String name, String number, String email, String method, String flat, String street, String city, String state, String country, String pin_code) {
+    void addOrder(String name, String number, String email, int method, String flat, String street, String city, String state, String country, String pin_code) {
        
-        String query = "INSERT INTO customers (fname,number,email,shipp_address,pin_code) VALUES("+name+",'"+number+"','"+email+"','"+flat+","+street+","+city+","+state+","+country+",'"+pin_code+"')";                                    
+        String query = "INSERT INTO customers (customer_id,fname,number,email,shipp_address,pin_code) VALUES('"+method+"','"+name+"','"+number+"','"+email+"','"+flat+","+street+","+city+","+state+","+country+",'"+pin_code+"')";
         connectToDb();
         
         try {
             st.executeUpdate(query);
             System.out.println("Record inserted");
         } catch (SQLException ex) {
-            Logger.getLogger(Book.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Check.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

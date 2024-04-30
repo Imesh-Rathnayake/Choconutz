@@ -34,8 +34,8 @@
          <div class="inputBox">
             <span>payment method :</span>
             <select name="method" class="box" required>
-               <option value="cash on delivery">cash on delivery</option>
-               <option value="credit card">credit card</option>
+               <option value="11">cash on delivery</option>
+               <option value="12">credit card</option>
                <option value="paytm">paytm</option>
                <option value="paypal">paypal</option>
             </select>
