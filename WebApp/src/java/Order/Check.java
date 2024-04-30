@@ -5,23 +5,47 @@
  */
 package Order;
 
+import java.awt.print.Book;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author 94781
  */
 class Check {
 
-    void addOrder(String name, String number, String email, String method, String flat, String street, String city, String state, String country, String pin_code) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    static Statement st;
+    
+    void addOrder(int bookid, String title, String author) throws SQLException {
         
+        String query = "INSERT INTO book VALUES("+bookid+",'"+title+"','"+author+"')";
         connectToDb();
-    }
+        
+        try {
+            st.executeUpdate(query);
+            System.out.println("Record inserted");
+        } catch (SQLException ex) {
+            Logger.getLogger(Book.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        }
 
     private void connectToDb() {
         String driver="com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/mysq";//data base name eka danna
-        
-        
+        String url = "jdbc:mysql://localhost:3306/choconutz";
+        try{
+            Class.forName(driver);
+            Connection con = DriverManager.getConnection(url, "root", "");
+            st = con.createStatement();
+        }catch(ClassNotFoundException | SQLException ex){
+            Logger.getLogger(Book.class.getName()).log(Level.SEVERE,null, ex);
+        }
     }
     
 }
