@@ -20,21 +20,6 @@ import java.util.logging.Logger;
 class Check {
 
     static Statement st;
-    
-    void addOrder(int bookid, String title, String author) throws SQLException {
-        
-        String query = "INSERT INTO book VALUES("+bookid+",'"+title+"','"+author+"')";
-        connectToDb();
-        
-        try {
-            st.executeUpdate(query);
-            System.out.println("Record inserted");
-        } catch (SQLException ex) {
-            Logger.getLogger(Book.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-        }
 
     private void connectToDb() {
         String driver="com.mysql.jdbc.Driver";
@@ -45,6 +30,19 @@ class Check {
             st = con.createStatement();
         }catch(ClassNotFoundException | SQLException ex){
             Logger.getLogger(Book.class.getName()).log(Level.SEVERE,null, ex);
+        }
+    }
+
+    void addOrder(String name, String number, String email, String method, String flat, String street, String city, String state, String country, String pin_code) {
+       
+        String query = "INSERT INTO customers (fname,number,email,payment_method,shipp_address,pin_code) VALUES("+name+",'"+number+"','"+email+"','"+method+"','"+flat+","+street+","+city+","+state+","+country+",'"+pin_code+"')";                                    
+        connectToDb();
+        
+        try {
+            st.executeUpdate(query);
+            System.out.println("Record inserted");
+        } catch (SQLException ex) {
+            Logger.getLogger(Book.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
