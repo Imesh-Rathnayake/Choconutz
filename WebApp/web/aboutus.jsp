@@ -56,10 +56,10 @@ Feel free to adjust and customize this description to better fit your brand voic
 "images/imesh.jpeg" alt="User 1">
                 </div>
                 <div class="card-info">
-                    <h2 class="card-name">Jane</h2>
-                    <p class="card-role">CEO and Founder</p>
-                    <p class="card-email">jane@example.com</p>
-                    <p><button class="button">Contact</button></p>
+                    <h2 class="card-name">Imesh rathnayake</h2>
+                    <p class="card-role">undergraduate</p>
+                    <p class="card-email">Imeshrathnayake@students.nsbm.ac.lk</p>
+                    <p><button class="button">0764638787</button></p>
                 </div>
             </div>
  
@@ -70,10 +70,10 @@ Feel free to adjust and customize this description to better fit your brand voic
                     <img src="images/imesh.jpeg" alt="User 2">
                 </div>
                 <div class="card-info">
-                    <h2 class="card-name">Miller</h2>
-                    <p class="card-role">Co-Founder</p>
-                    <p class="card-email">Miller@example.com</p>
-                    <p><button class="button">Contact</button></p>
+                    <h2 class="card-name">Dinesh Hashan</h2>
+                    <p class="card-role">undergraduate</p>
+                    <p class="card-email">Dineshhashan@students.nsbm.ac.lk</p>
+                    <p><button class="button">0776027804</button></p>
                 </div>
             </div>
            
@@ -84,10 +84,108 @@ Feel free to adjust and customize this description to better fit your brand voic
                     <img src="images/imesh.jpeg" alt="User 3">
                 </div>
                 <div class="card-info">
-                    <h2 class="card-name">Joe</h2>
-                    <p class="card-role">Co-Founder</p>
-                    <p class="card-email">Joe@example.com</p>
-                    <p><button class="button">Contact</button></p>
+                    <h2 class="card-name">Vinod Rahal</h2>
+                    <p class="card-role">undergraduate</p>
+                    <p class="card-email">Vinodrahal@students.nsbm.ac.lk</p>
+                    <p><button class="button">0767135911</button></p>
+                </div>
+            </div>
+            
+            <!-- Card 4  -->
+           
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/imesh.jpeg" alt="User 3">
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">Panchayu Bhanu</h2>
+                    <p class="card-role">undergraduate</p>
+                    <p class="card-email">Panchayubhanu@students.nsbm.ac.lk</p>
+                    <p><button class="button">0781929536</button></p>
+                </div>
+            </div>
+            
+            <!-- Card 5 -->
+           
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/imesh.jpeg" alt="User 3">
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">Pawani Madushani</h2>
+                    <p class="card-role">undergraduate</p>
+                    <p class="card-email">Pawanimadushani@students.nsbm.ac.lk</p>
+                    <p><button class="button">0702544733</button></p>
+                </div>
+            </div>
+            
+            <!-- Card 6 -->
+           
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/imesh.jpeg" alt="User 3">
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">Thasara Hiruni</h2>
+                    <p class="card-role">undergraduate</p>
+                    <p class="card-email">Thasarahiruni@students.nsbm.ac.lk</p>
+                    <p><button class="button">0715353632</button></p>
+                </div>
+            </div>
+            
+            <!-- Card 7 -->
+           
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/imesh.jpeg" alt="User 3">
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">Amashani Dilhara</h2>
+                    <p class="card-role">undergraduate</p>
+                    <p class="card-email">Amashanidilhara@students.nsbm.ac.lk</p>
+                    <p><button class="button">0754547122</button></p>
+                </div>
+            </div>
+            
+            <!-- Card 8 -->
+           
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/imesh.jpeg" alt="User 3">
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">Isanka Charuka</h2>
+                    <p class="card-role">undergraduate</p>
+                    <p class="card-email">Isankacharuka@students.nsbm.ac.lk</p>
+                    <p><button class="button">0787411205</button></p>
+                </div>
+            </div>
+            
+            <!-- Card 9 -->
+           
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/imesh.jpeg" alt="User 3">
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">Pravihara</h2>
+                    <p class="card-role">undergraduate</p>
+                    <p class="card-email">Pravihara@students.nsbm.ac.lk</p>
+                    <p><button class="button">0710192005</button></p>
+                </div>
+            </div>
+            
+            <!-- Card 10 -->
+           
+            <div class="card">
+                <div class="card-img">
+                    <img src="images/imesh.jpeg" alt="User 3">
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">Ronath Wijayasiri</h2>
+                    <p class="card-role">undergraduate</p>
+                    <p class="card-email">Ronathwijayasiri@students.nsbm.ac.lk</p>
+                    <p><button class="button">0702001245</button></p>
                 </div>
             </div>
         </div>
