@@ -123,7 +123,7 @@
 
  <section class="show-products">
         <h1 class="title">Products Added</h1>
-
+ <div class="box-container">
         <%
             try {
                 // Replace with your actual database connection details
@@ -144,7 +144,7 @@
 
                     // Display product information (modify as needed)
         %>
-                    <div class="box-container">
+                   
                         <div class="box">
                             <div class="price">$<%= price %>/-</div>
                             <img src="uploaded_img/<%= image %>" alt="<%= name %>">
@@ -156,14 +156,15 @@
                                 <a href="admin_products.jsp?delete=<%= fetchProducts.getInt("id") %>" class="delete-btn" onclick="return confirm('Delete this product?');">Delete</a>
                             </div>
                         </div>
-                    </div>
+                 
         <%
                 }
             
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        %>
+        %> 
+ </div>
     </section>
 
 

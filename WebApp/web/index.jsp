@@ -5,7 +5,7 @@
             <section class="home" id="home">
                 <div class="home__container container grid">
                     <div class="home__img-bg">
-                        <img src="images/home.png" alt="" class="home__img">
+                        <img src="images/a.png" alt="" class="home__img">
                     </div>
     
                     <div class="home__social">
@@ -129,7 +129,7 @@
             </section>
 
             <!--==================== PRODUCTS ====================-->
-            <section class="products section container" id="products">
+<!--            <section class="products section container" id="products">
                 <h2 class="section__title">
                     Most Popular
                 </h2>
@@ -190,7 +190,7 @@
                         </button>
                     </article>
                 </div>
-            </section>
+            </section>-->
 
             <!--==================== TESTIMONIAL ====================-->
             <section class="testimonial section container">

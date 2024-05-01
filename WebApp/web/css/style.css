@@ -11,6 +11,17 @@
    align-items: center;
    min-height: 60vh;
 }
+.home__img-bg {
+   
+    width: 258px;
+    height: 430px;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    justify-self: flex-end;
+    transform: translateX(1.5rem);
+}
 
 .home-bg .home .content{
    width: 50rem;

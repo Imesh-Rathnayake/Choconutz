@@ -53,7 +53,7 @@ try {
                     <img src="uploaded_img/<%= productImage %>" alt="" class="p__img">
 
                     <h3 class="p__title"><%= productName %></h3>
-                    <h5 style="color:gray;"><%=productDetails %></h5>
+                    <h5 style="color:#b45f06;"><%=productDetails %></h5>
                     <span class="p__price">Rs <%= productPrice %></span>
 
                     <button class="p__button">
@@ -121,7 +121,7 @@ try {
                     <img src="uploaded_img/<%= productImage %>" alt="" class="p__img">
 
                     <h3 class="p__title"><%= productName %></h3>
-                    <h5 style="color:gray;"><%=productDetails %></h5>
+                    <h5 style="color:#b45f06;"><%=productDetails %></h5>
                     <span class="p__price">Rs <%= productPrice %></span>
 
                     <button class="p__button">
@@ -191,7 +191,7 @@ try {
                     <img src="uploaded_img/<%= productImage %>" alt="" class="p__img">
 
                     <h3 class="p__title"><%= productName %></h3>
-                    <h5 style="color:gray;"><%=productDetails %></h5>
+                    <h5 style="color:#b45f06;"><%=productDetails %></h5>
                     <span class="p__price">Rs <%= productPrice %></span>
 
                     <button class="p__button">
@@ -260,7 +260,7 @@ try {
                     <img src="uploaded_img/<%= productImage %>" alt="" class="p__img">
 
                     <h3 class="p__title"><%= productName %></h3>
-                    <h5 style="color:gray;"><%=productDetails %></h5>
+                    <h5 style="color:#b45f06;"><%=productDetails %></h5>
                     <span class="p__price">Rs <%= productPrice %></span>
 
                     <button class="p__button">

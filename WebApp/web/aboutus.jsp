@@ -52,13 +52,12 @@ Feel free to adjust and customize this description to better fit your brand voic
            
             <div class="card">
                 <div class="card-img">
-                    <img src=
-"images/imesh.jpeg" alt="User 1">
+                    <img src="images/images3.jpeg" alt="User 1">
                 </div>
                 <div class="card-info">
-                    <h2 class="card-name">Jane</h2>
+                    <h2 class="card-name">Richard Tindal</h2>
                     <p class="card-role">CEO and Founder</p>
-                    <p class="card-email">jane@example.com</p>
+                    <p class="card-email">Richard@gmail.com</p>
                     <p><button class="button">Contact</button></p>
                 </div>
             </div>
@@ -67,12 +66,12 @@ Feel free to adjust and customize this description to better fit your brand voic
            
             <div class="card">
                 <div class="card-img">
-                    <img src="images/imesh.jpeg" alt="User 2">
+                    <img src="images/images.jpeg" alt="User 2">
                 </div>
                 <div class="card-info">
-                    <h2 class="card-name">Miller</h2>
-                    <p class="card-role">Co-Founder</p>
-                    <p class="card-email">Miller@example.com</p>
+                    <h2 class="card-name">Julien Kolly</h2>
+                    <p class="card-role">Chief Creative Officer</p>
+                    <p class="card-email">Julien@gmail.com</p>
                     <p><button class="button">Contact</button></p>
                 </div>
             </div>
@@ -81,12 +80,12 @@ Feel free to adjust and customize this description to better fit your brand voic
            
             <div class="card">
                 <div class="card-img">
-                    <img src="images/imesh.jpeg" alt="User 3">
+                    <img src="images/images1.jpeg" alt="User 3">
                 </div>
                 <div class="card-info">
-                    <h2 class="card-name">Joe</h2>
-                    <p class="card-role">Co-Founder</p>
-                    <p class="card-email">Joe@example.com</p>
+                    <h2 class="card-name">Jenny White</h2>
+                    <p class="card-role">Director of Sales and Marketing, Registrar Channel</p>
+                    <p class="card-email">Jenny@gmail.com.com</p>
                     <p><button class="button">Contact</button></p>
                 </div>
             </div>

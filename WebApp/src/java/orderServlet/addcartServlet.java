@@ -96,14 +96,7 @@ public class addcartServlet extends HttpServlet {
            System.out.println(request.getParameter("quantity"));
            System.out.println(request.getParameter("pId"));
            System.out.println(request.getParameter("user_id"));
-//           out.println(price); 
-//           out.println(quantity);
-//           out.println(userId);
-//           out.println(productId);
-//           out.println(name);
-//           out.println(image);
-
-          //        
+      
        
         String url = "jdbc:mysql://localhost:3306/choconuts";
         String username = "root";

@@ -107,7 +107,7 @@
    <%
         }
         if (!rs.next()) {
-            out.println("<p class=\"empty\">your cart is empty</p>");
+//            out.println("<p class=\"empty\">your cart is empty</p>");
         }
    %>
    </div>
@@ -115,8 +115,8 @@
    <div class="cart-total">
       <p>grand total : <span>$<%= grand_total %>/-</span></p>
       <a href="shop.jsp" class="option-btn">continue shopping</a>
-      <a href="cart.jsp?delete_all" >delete all</a>
-      <a href="checkout.jsp" >proceed to checkout</a>
+      <a href="cart.jsp?delete_all" class="option-btn">delete all</a>
+      <a href="checkout.jsp" class="option-btn">proceed to checkout</a>
    </div>
 
 </section>
