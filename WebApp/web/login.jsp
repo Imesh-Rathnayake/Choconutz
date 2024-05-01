@@ -1,18 +1,15 @@
 <%@ include file="jsp/header.jsp"%>
 <div class="login-container">
 <div class="wrapper">
-       <%
-      String message = (String)request.getAttribute("message");
-      out.println("<p>" + message + "</p>");
-       %>
+    <p><center>${requestScope.message}</center></p>
     <form action="customerLoginServlet" method="post">
       <h1>Login</h1>
       <div class="input-box">
-          <input type="text" placeholder="Username" name="uname" required>
+        <input type="text" placeholder="Username" required name="uname">
         <i class='bx bxs-user'></i>
       </div>
       <div class="input-box">
-          <input type="password" placeholder="Password" name="pwd" required>
+        <input type="password" placeholder="Password" required name="pwd">
         <i class='bx bxs-lock-alt' ></i>
       </div>
       <div class="remember-forgot">

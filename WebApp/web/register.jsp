@@ -1,24 +1,23 @@
 <%@ include file="jsp/header.jsp"%>
 <div class="login-container">
 <div class="wrapper">
-    <%
-String message = (String)request.getAttribute("message");
-out.println("<p>" + message + "</p>");
-%>
+    
+    
+    <form action="customerRegisterServlet" method="post">
+        <p><center> ${requestScope.message}<center></p>
 
-<form action="customerRegisterServlet" method="post">
       <h1>Register</h1>
       <div class="input-box">
-          <input type="text" placeholder="user name" name="uname" required="">
+          <input type="text" placeholder="User Name" required="" name="uname">
       </div>
       <div class="input-box">
-          <input type="email" placeholder="email" name="email" required="">
+          <input type="email" placeholder="Enter Email" required="" name="email" >
+      </div> 
+      <div class="input-box">
+          <input type="phone" placeholder="Enter phone number" required="" name="phone" >
       </div>  
-       <div class="input-box">
-          <input type="text" placeholder="phone number" name="phone" required="">
-      </div>
       <div class="input-box">
-          <input type="password" placeholder="Enter Password" name="pwd" required="">
+          <input type="password" placeholder="Enter Password" required="" name="pwd">
       </div>
       <div class="input-box">
         <input type="password" placeholder="Re-Enter Password" required="">

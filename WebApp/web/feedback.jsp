@@ -1,101 +1,159 @@
 <%@ include file="jsp/header.jsp"%>
-<!--==================== TESTIMONIAL ====================-->
-            <section class="testimonial section container">
-                <div class="testimonial__container grid">
-                    <div class="swiper testimonial-swiper">
-                        <div class="swiper-wrapper">
-                            <div class="testimonial__card swiper-slide">
-                                <div class="testimonial__quote">
-                                    <i class='bx bxs-quote-alt-left' ></i>
-                                </div>
-                                <p class="testimonial__description">
-                                    Every bite of these donuts is like a little piece of heaven! The flavors are incredibly rich and the texture is just perfect. My favorite spot for indulging in sweet delights.
-                                </p>
-                                <h3 class="testimonial__date">March 27. 2021</h3>
-        
-                                <div class="testimonial__perfil">
-                                    <img src="images/testimonial1.jpg" alt="" class="testimonial__perfil-img">
-        
-                                    <div class="testimonial__perfil-data">
-                                        <span class="testimonial__perfil-name">Imesh Rathnayake</span>
-                                        <span class="testimonial__perfil-detail">Director of a company</span>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="testimonial__card swiper-slide">
-                                <div class="testimonial__quote">
-                                    <i class='bx bxs-quote-alt-left' ></i>
-                                </div>
-                                <p class="testimonial__description">
-                                    I've tried donuts from many places, but none compare to the unique and mouthwatering creations at this shop. A must-visit for any donut lover!
-                                </p>
-                                <h3 class="testimonial__date">March 27. 2021</h3>
-        
-                                <div class="testimonial__perfil">
-                                    <img src="images/testimonial2.jpg" alt="" class="testimonial__perfil-img">
-        
-                                    <div class="testimonial__perfil-data">
-                                        <span class="testimonial__perfil-name">Micheal Jackson</span>
-                                        <span class="testimonial__perfil-detail">Director of a company</span>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="testimonial__card swiper-slide">
-                                <div class="testimonial__quote">
-                                    <i class='bx bxs-quote-alt-left' ></i>
-                                </div>
-                                <p class="testimonial__description">
-                                    The atmosphere, the service, and most importantly, the donuts - everything is top-notch! I'm always excited to see what new flavors they come up with. Highly recommend!
-                                </p>
-                                <h3 class="testimonial__date">March 27. 2021</h3>
+
+
+<section class="review-form">
+
+   <h1 class="form-title">Leave a Review</h1>
+
+   <form action="" method="POST" class="review-form-container">
+      <div class="form-group">
+          <label for="name" class="review-label">Your Name:</label>
+         <input type="text" name="name" id="name" class="form-control" required placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+         <label for="email" class="review-label">Your Email:</label>
+         <input type="email" name="email" id="email" class="form-control" required placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+         <label class="review-label">Your Rating:</label>
+         <div class="rating">
+            <input type="radio" id="star5" name="rating" value="5" required onclick="changeColor('star5')" />
+            <label for="star5"></label>
+            <input type="radio" id="star4" name="rating" value="4" onclick="changeColor('star4')" />
+            <label for="star4"></label>
+            <input type="radio" id="star3" name="rating" value="3" onclick="changeColor('star3')" />
+            <label for="star3"></label>
+            <input type="radio" id="star2" name="rating" value="2" onclick="changeColor('star2')" />
+            <label for="star2"></label>
+            <input type="radio" id="star1" name="rating" value="1" onclick="changeColor('star1')" />
+            <label for="star1"></label>
+         </div>
+      </div>
+      <div class="form-group">
+         <label for="message" class="review-label">Your Review:</label>
+         <textarea name="message" id="message" class="form-control" required placeholder="Enter your review" rows="4"></textarea>
+      </div>
+      <input type="submit" value="Submit Review" class="btn-submit" name="send">
+   </form>
+
+</section>
+
+<script>
+function changeColor(radioId) {
+    const stars = ['star1', 'star2', 'star3', 'star4', 'star5'];
+    
+    // Reset all stars to default color
+    stars.forEach(star => {
+        const label = document.querySelector(`label[for=${star}]`);
+        label.style.color = 'black';
+    });
+    
+    // Set color for clicked star and previous stars
+    let clicked = false;
+    for (let i = 0; i < stars.length; i++) {
+        const label = document.querySelector(`label[for=${stars[i]}]`);
         
-                                <div class="testimonial__perfil">
-                                    <img src="images/testimonial3.jpg" alt="" class="testimonial__perfil-img">
+        if (stars[i] === radioId) {
+            clicked = true;
+        }
         
-                                    <div class="testimonial__perfil-data">
-                                        <span class="testimonial__perfil-name">Justin Beiber</span>
-                                        <span class="testimonial__perfil-detail">Director of a company</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="swiper-button-next">
-                            <i class='bx bx-right-arrow-alt' ></i>
-                        </div>
-                        <div class="swiper-button-prev">
-                            <i class='bx bx-left-arrow-alt' ></i>
-                        </div>
-                    </div>
+        if (clicked) {
+            label.style.color = 'gold';
+        }
+    }
+}
+</script>
 
-                    <div class="testimonial__images">
-                        <div class="testimonial__square"></div>
-                        <img src="images/testimonia.png" alt="" class="testimonial__img">
-                    </div>
-                </div>
-            </section>
 
-  <!--==================== NEWSLETTER ====================-->
-            <section class="newsletter section container">
-                <div class="newsletter__bg grid">
-                    <div>
-                        <h2 class="newsletter__title">Subscribe Our <br> Newsletter</h2>
-                        <p class="newsletter__description">
-                            Don't miss out on your discounts. Subscribe to our email 
-                            newsletter to get the best offers, discounts, coupons, 
-                            gifts and much more.
-                        </p>
-                    </div>
 
-                    <form action="" class="newsletter__subscribe">
-                        <input type="email" placeholder="Enter your email" class="newsletter__input">
-                        <button class="button">
-                            SUBSCRIBE
-                        </button>
-                    </form>
-                </div>
-            </section>
-        </main>
+
+
+
+
+
+
+<section class="reviews">
+
+   <h1 class="review-title">clients reivews</h1>
+
+   <div class="review-container">
+
+      <div class="review_box">
+         <img src="images/testimonial1.jpg" alt="">
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptates sit earum, neque non cupiditate amet deserunt aperiam quas ex.</p>
+         <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+         </div>
+         <h3 class="review-h3">john deo</h3>
+      </div>
+       <div class="review_box">
+         <img src="images/testimonial2.jpg" alt="">
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptates sit earum, neque non cupiditate amet deserunt aperiam quas ex.</p>
+         <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+         </div>
+         <h3 class="review-h3">john deo</h3>
+      </div>
+       <div class="review_box">
+         <img src="images/testimonial3.jpg" alt="">
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptates sit earum, neque non cupiditate amet deserunt aperiam quas ex.</p>
+         <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+         </div>
+         <h3 class="review-h3">john deo</h3>
+      </div>
+       <div class="review_box">
+         <img src="images/testimonial1.jpg" alt="">
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptates sit earum, neque non cupiditate amet deserunt aperiam quas ex.</p>
+         <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+         </div>
+         <h3 class="review-h3">john deo</h3>
+      </div>
+       <div class="review_box">
+         <img src="images/testimonial2.jpg" alt="">
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptates sit earum, neque non cupiditate amet deserunt aperiam quas ex.</p>
+         <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+         </div>
+         <h3 class="review-h3">john deo</h3>
+      </div>
+       <div class="review_box">
+         <img src="images/testimonial3.jpg" alt="">
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et voluptates sit earum, neque non cupiditate amet deserunt aperiam quas ex.</p>
+         <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+         </div>
+         <h3 class="review-h3">john deo</h3>
+      </div>
+
+      
+
+</section>
 <%@ include file="jsp/footer.jsp"%>

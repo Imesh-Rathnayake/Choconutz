@@ -18,7 +18,7 @@
                             <a href="aboutus.jsp" class="footer__link">About Us</a>
                         </li>
                         <li>
-                            <a href="contact.jsp" class="footer__link">Customer Support</a>
+                            <a href="contact.jsp" class="footer__link">Contact Us</a>
                         </li>
                         <li>
                             <a href="feedback.jsp" class="footer__link">Feedback</a>
@@ -27,17 +27,17 @@
                 </div>
 
                 <div class="footer__content">
-                    <h3 class="footer__title">Product</h3>
+                    <h3 class="footer__title">Special Inquires</h3>
 
                     <ul class="footer__links">
                         <li>
-                            <a href="main.jsp" class="footer__link">Main</a>
+                            <a href="events.jsp" class="footer__link">Event Orders</a>
                         </li>
                         <li>
-                            <a href="beverages.jsp" class="footer__link">Beverages</a>
+                            <a href="cakes.jsp" class="footer__link">Birthday Cakes</a>
                         </li>
                         <li>
-                            <a href="promotions.jsp" class="footer__link">Promotions</a>
+                            <a href="giftcards.jsp" class="footer__link">Gift Cards</a>
                         </li>
                     </ul>
                 </div>
