@@ -23,7 +23,7 @@
         <p><center>${requestScope.message}</center></p>
     </h2>
         
-    <div class="p__container grid">
+    <div class="p__container grid" >
         <%
         // Establish connection to the database
         Integer userId = (Integer) session.getAttribute("user_id");
@@ -59,7 +59,7 @@
         %>
 
         <form action="addcartServlet" method="post" onsubmit="return addToCart('<%= userId %>')">
-            <article class="p__card1">
+            <article class="p__card1" >
                 <img  src="uploaded_img/<%= productImage %>" alt=""
                     class="p__img">
                 <input type="hidden" name="user_id" value="<%= userId %>">
@@ -68,9 +68,9 @@
                 <input type="hidden" name="name" value="<%= productName %>">
                 <input type="hidden" name="price" value="<%= productPrice %>">
                  <input type="hidden" name="cate" value="<%= cate %>">
-                <input type="number" name="quantity" value="1" min="1">
+                <input style="border: none;border-radius: 5px; padding:5px;margin:7px 9px; " type="number" name="quantity" value="1" min="1">
                 <h3 class="p__title"><%=productName %></h3>
-                <h5 style="color:gray;"><%=productDetails %></h5>
+                <h5 style="color:#b45f06;"><%=productDetails %></h5>
                 <span  class="p__price">Rs <%= productPrice %></span>
 
                 <button class="p__button" type="submit">
