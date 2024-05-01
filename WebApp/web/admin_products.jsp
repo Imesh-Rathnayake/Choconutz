@@ -104,10 +104,10 @@
          <input type="text" name="name" class="box" required placeholder="enter product name">
          <select name="category" class="box" required>
             <option value="" selected disabled>select category</option>
-               <option value="vegitables">vegitables</option>
-               <option value="fruits">fruits</option>
-               <option value="meat">meat</option>
-               <option value="fish">fish</option>
+               <option value="donuts">Donuts</option>
+               <option value="cakes">Cakes</option>
+               <option value="beverages">Beverages</option>
+               <option value="sundaes">Sundaes</option>
          </select>
          </div>
          <div class="inputBox">

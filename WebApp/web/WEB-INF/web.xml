@@ -44,6 +44,10 @@
         <servlet-name>logoutServlet</servlet-name>
         <servlet-class>LogoutServlet.logoutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>addcartServlet</servlet-name>
+        <servlet-class>orderServlet.addcartServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Add_products</servlet-name>
         <url-pattern>/Add_products</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>logoutServlet</servlet-name>
         <url-pattern>/logoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addcartServlet</servlet-name>
+        <url-pattern>/addcartServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

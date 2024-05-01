@@ -56,13 +56,13 @@
                             <br>                            
                         </div>
 
-                      <a href="products.jsp" class="featured__button"> Explore</a>  
+                      <a href="category.jsp?category=donuts" class="featured__button"> Explore</a>  
                     </article>
 
                     <article class="featured__card">
                         
 
-                        <img src="images/cake.png" alt="" class="featured__img">
+                        <img src="images/black-forest-cake-half-kg_1.jpg" alt="" class="featured__img">
 
                         <div class="featured__data">
                             <h3 class="featured__title">Cakes</h3>
@@ -70,13 +70,13 @@
                             <br>
                         </div>
 
-                        <a href="products.jsp" class="featured__button"> Explore</a>
+                        <a href="category.jsp?category=cakes" class="featured__button"> Explore</a>
                     </article>
 
                     <article class="featured__card">
                         
 
-                        <img src="images/drinks.png" alt="" class="featured__img">
+                        <img src="images/orange-juice-oranges.jpeg" alt="" class="featured__img">
 
                         <div class="featured__data">
                             <h3 class="featured__title">Beverages</h3>
@@ -84,12 +84,12 @@
                             <br>
                         </div>
 
-                        <a href="products.jsp" class="featured__button"> Explore</a>
+                        <a href="category.jsp?category=beverages" class="featured__button"> Explore</a>
                     </article>
                      <article class="featured__card">
                         
 
-                        <img src="images/sundae.png" alt="" class="featured__img">
+                        <img src="images/ice-cream-sundae-with-homemade-caramel-FT-RECIPE0721-a3f7998964104a8094eccfd3b827cc56.jpg" alt="" class="featured__img">
 
                         <div class="featured__data">
                             <h3 class="featured__title">Sundae</h3>
@@ -97,7 +97,7 @@
                             <br>
                         </div>
 
-                        <a href="products.jsp" class="featured__button"> Explore</a>
+                        <a href="category.jsp?category=sundaes" class="featured__button"> Explore</a>
                     </article>
                 </div>
             </section>

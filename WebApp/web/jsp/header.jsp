@@ -1,7 +1,12 @@
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -40,15 +45,15 @@
                             <a href="index.jsp" class="nav__link">Home</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link">Categories</a>
-                            <div class="cat-list">
+                            <a href="products.jsp" class="nav__link">Shop</a>
+<!--                            <div class="cat-list">
                             <ul>
                             <li class="cat-items"><a href="products.jsp#Donuts" class="cat__link">Donuts</a></li>
                             <li class="cat-items"><a href="products.jsp#Cakes" class="cat__link">Cakes</a></li>
                             <li class="cat-items"><a href="products.jsp#Beverages" class="cat__link">Beverages</a></li>
                             <li class="cat-items"><a href="products.jsp#Beverages" class="cat__link">Sundae</a></li>
                             </ul>
-                            </div>
+                            </div>-->
                         </li>
                         <li class="nav__item">
                             <a href="aboutus.jsp" class="nav__link">About us</a>
@@ -56,6 +61,7 @@
                         <li class="nav__item">
                             <a href="order.jsp" class="nav__link">Orders</a>
                         </li>
+                      
                     </ul>
 
                     <div class="nav__close" id="nav-close">
@@ -65,12 +71,14 @@
 
                 <div class="nav__btns">
                     <!-- Theme change button -->
+                  
                     <i class='bx bx-moon change-theme' id="theme-button"></i>
-
+                    <a href="cart.jsp">
                     <div class="nav__shop" id="cart-shop">
                         <i class='bx bx-shopping-bag' ></i>
-                        <span class="qnty">3</span>
+<!--                        <span class="qnty">3</span>-->
                     </div>
+                    </a>
                    <div class="nav__signup" id="signup">
                         <c:if test="${empty sessionScope.user_id}">  <a href="login.jsp" class='login_btn change-theme' id="theme-button">Sign in</a>
                         </c:if>
@@ -90,7 +98,7 @@
         </header>
         
     <!--==================== CART ====================-->
-        <div class="cart" id="cart">
+<!--        <div class="cart" id="cart">
             <i class='bx bx-x cart__close' id="cart-close"></i>
 
             <h2 class="cart__title-center">My Cart</h2>
@@ -163,6 +171,9 @@
                 <input type="submit" class="c-cart" value="Delete All">
                 <input type="submit" class="c-cart" value="Proceed">
             </div>
-        </div>
+        </div>-->
+    
+    
+    
 
     
