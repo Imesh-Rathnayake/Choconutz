@@ -125,7 +125,7 @@ public class adminServlets extends HttpServlet {
 //        details = details.trim();
 
         // Database connection details
-        String dbUrl = "jdbc:mysql://localhost:3306/shop_db";
+        String dbUrl = "jdbc:mysql://localhost:3306/choconuts";
         String dbUser = "root";
         String dbPassword = "";
 
